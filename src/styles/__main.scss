@@ -1,0 +1,9 @@
+@use "./__theme";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: _theme.$primary-bg-color;
+}
