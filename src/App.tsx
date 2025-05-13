@@ -1,4 +1,4 @@
-import TheSetup from "pages/TheStartSetup"
+import TheSetup from "./pages/TheStartSetup"
 
 function App() {
   return (

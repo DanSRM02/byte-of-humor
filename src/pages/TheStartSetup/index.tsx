@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "components/inputs/Button";
 import classes from "./TheStartSetup.module.scss";
-import { buttonMessages } from "utils/const";
+import Button from "@/components/inputs/Button";
+import { buttonMessages } from "@/utils/const";
 
 function TheSetup() {
   const [message, setMessage] = useState(buttonMessages[0]);    
