@@ -6,16 +6,16 @@
   align-items: center;
   font-size: larger;
   gap: 100px;
+  margin: 10rem;
 
   &--container {
-    display: flex;    
+    display: flex;     
   }
 
   &--question {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    gap: 0.2rem;
+    flex-direction: column;       
 
     h2{
       margin-bottom: 0;
@@ -34,9 +34,9 @@
 
   &--interaction {
     display: grid;
-    align-self: center;
-    margin-left: 6rem;
-    padding: 12vh 6vw;
-    background-color: _theme.$secondary-bg-color;
+    align-self: center; 
+    
+    padding: 14% 18%;
+    background-color: _theme.$third-bg-color;
   }
 }

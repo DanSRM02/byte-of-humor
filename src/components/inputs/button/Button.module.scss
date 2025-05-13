@@ -1,0 +1,23 @@
+@use "../../../styles/__theme";
+
+.button {
+  border-radius: 5px;
+  border-style: none;
+  
+  &-primary {
+    @extend .button;
+    background-color: _theme.$secondary-bg-color;
+    color: _theme.$primary-bg-color;
+  }
+  &-secondary {
+    @extend .button;
+    background-color: _theme.$primary-bg-color;
+    color: _theme.$secondary-bg-color;
+  }
+
+  &.size {
+    &-medium {
+      padding: 1rem 2.5rem;
+    }
+  }
+}

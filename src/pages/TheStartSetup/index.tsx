@@ -1,10 +1,32 @@
-import Button from "../../components/inputs/button";
+import { useState } from "react";
+import Button from "components/inputs/Button";
 import classes from "./TheStartSetup.module.scss";
+import { buttonMessages } from "utils/const";
 
 function TheSetup() {
-  function click (){
-    console.log("I've been clicked")
+  const [message, setMessage] = useState(buttonMessages[0]);    
+
+  function handleClick() {
+    setMessage((prevMessage) => {
+      const currentIndex = buttonMessages.indexOf(prevMessage);
+      const nextIndex = (currentIndex + 1) % buttonMessages.length;
+      changePosition();
+      return buttonMessages[nextIndex];
+    });
+  }  
+
+  const calculateRamdomNumber = (value: number) => Math.random() * value;
+  
+  function changePosition() {
+    const buttonElement = document.querySelector("button")    
+    const translateValue = `${calculateRamdomNumber(500)}%, ${calculateRamdomNumber(500)}%`
+
+    if(buttonElement){
+      buttonElement.style.transform = `translate(${translateValue})`
+      buttonElement.style.transition = "transform .2s ease-out"
+    }
   }
+
   return (
     <main className={classes["first-setup"]}>
       <h1>Byte Of Humor</h1>
@@ -24,7 +46,7 @@ function TheSetup() {
           </p>
         </article>
         <article className={classes["first-setup--interaction"]}>
-          <Button handleChange={click}>{message}</Button>
+          <Button size="medium" variant="primary" handleChange={handleClick}>{message}</Button>
         </article>
       </section>
     </main>
