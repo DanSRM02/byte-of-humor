@@ -1,11 +1,25 @@
 @use "../../../styles/__theme";
 
-.card{
-    @include _theme.flex(column);
-    &__image{
-        background-color: _theme.$third-bg-color;
-        opacity: .5;    
-        height: 16rem;
-        width: 16rem;
-    }
+.card {
+  @include _theme.flex(column, space-between);
+  box-shadow: 1px 15px 18px -3px _theme.$third-bg-color;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  width: minmax(20rem, 21rem);
+
+
+  &__image {
+    background-color: _theme.$third-bg-color;
+    border-radius: 2rem;
+    width: 100%;
+  }
+
+  &__title {
+    margin: 1rem 0;
+  }
+
+  &__body {
+    opacity: 0.7;
+    line-height: 1.2;
+  }
 }

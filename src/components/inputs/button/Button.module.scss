@@ -1,9 +1,12 @@
 @use "../../../styles/__theme";
 
 .button {
+  font-family: _theme.$font-family-inter;
   border-radius: 5px;
   border-style: none;
-  
+  font-weight: bold;
+  transition: all 0.2s ease;
+
   &-primary {
     @extend .button;
     background-color: _theme.$secondary-bg-color;
@@ -15,10 +18,24 @@
     color: _theme.$secondary-bg-color;
   }
 
+  &:hover,
+  &:active {
+    background-color: _theme.$secondary-bg-color;
+    color: _theme.$primary-bg-color;
+  }
 }
 
 .size {
+  &-small {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
   &-medium {
-    padding: 1rem 2.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  &-large {
+    padding: 1.25rem 2rem;
+    font-size: 1rem;
   }
 }

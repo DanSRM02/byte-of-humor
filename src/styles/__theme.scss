@@ -8,10 +8,17 @@ $primary-bg-color: #ffffff !default;
 $secondary-bg-color: #222222 !default;
 $third-bg-color: #d9d9d9 !default;
 
-
-@mixin flex($direction , $justify: null, $align: null) {
+@mixin flex($direction, $justify: null, $align: null) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
+
+/*Laptop Size*/
+@media (max-width: 70em) {
+  html {
+    font-size: 72%;
+  }
+}
+

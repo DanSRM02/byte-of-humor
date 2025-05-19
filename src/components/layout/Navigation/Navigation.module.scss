@@ -6,7 +6,7 @@
   align-items: center;
   max-width: 100%;
   min-height: 160px;
-  padding: 2em 5em;  
+  padding: 2em 5em;
 
   &__nav-list {
     display: flex;
@@ -15,7 +15,7 @@
   }
 
   &__nav-link {
-    transition: all 0.3s ease-out;
+    transition: all 0.3s ease;
 
     &:hover,
     &:active {

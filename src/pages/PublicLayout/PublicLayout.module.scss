@@ -1,9 +1,20 @@
+@use "../../styles/__theme";
+
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   &__content {
+    @extend.layout;
+    gap: 5rem;
     flex: 1;
+    margin: 0 5rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .card-content {
+    @include _theme.flex(column, center, center);
   }
 }

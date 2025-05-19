@@ -1,9 +1,5 @@
-@use "../../../styles/__theme";
-
 .lead-in {
-  @include _theme.flex(row, space-between);
-  
   &__paragraph {
-    max-width: 35rem;      
+    max-width: 35rem;
   }
 }
