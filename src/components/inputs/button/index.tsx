@@ -1,20 +1,20 @@
 import type { ReactNode } from "react";
 import classes from "./Button.module.scss";
 
-type buttonProps = {
+type ButtonProps = {
   variant?: string;
   size?: string;
   children: ReactNode;
   handleChange?: () => void;
 };
 
-function Button({
+const Button = ({
   children,
   handleChange,
   variant = "primary",
   size = "medium",
   ...props
-}: buttonProps) {
+}: ButtonProps) => {
   const buttonStyle = classes[`button-${variant}`];
   const sizeStyle = classes[`size-${size}`];
 
@@ -27,6 +27,6 @@ function Button({
       {children}
     </button>
   );
-}
+};
 
 export default Button;

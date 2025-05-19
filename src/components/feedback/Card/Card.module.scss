@@ -1,0 +1,11 @@
+@use "../../../styles/__theme";
+
+.card{
+    @include _theme.flex(column);
+    &__image{
+        background-color: _theme.$third-bg-color;
+        opacity: .5;    
+        height: 16rem;
+        width: 16rem;
+    }
+}

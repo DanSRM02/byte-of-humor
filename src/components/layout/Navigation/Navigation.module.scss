@@ -1,0 +1,28 @@
+@use "../../../styles/__theme";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  min-height: 160px;
+  padding: 2em 5em;  
+
+  &__nav-list {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: space-around;
+  }
+
+  &__nav-link {
+    transition: all 0.3s ease-out;
+
+    &:hover,
+    &:active {
+      padding: 10px;
+      border-radius: 5px;
+      background: _theme.$secondary-bg-color;
+      color: _theme.$primary-bg-color;
+    }
+  }
+}

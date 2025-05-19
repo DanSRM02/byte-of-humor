@@ -4,39 +4,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: larger;
   gap: 100px;
-  margin: 10rem;
+  height: 100vh;
 
-  &--container {
-    display: flex;     
-  }
-
-  &--question {
+  &__container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;       
-
-    h2{
-      margin-bottom: 0;
-    }
-
-    h4{
-      opacity: .5;
-      margin-bottom: 0;
-    }
-
-    p {
-      line-height: 1;
-      margin-bottom: 0;
-    }
   }
 
-  &--interaction {
+  &__question {
+    display: flex;
+    white-space: nowrap;
+    overflow: visible;
+    flex-direction: column;
+  }
+
+  &__interaction {
     display: grid;
-    align-self: center; 
-    
-    padding: 14% 18%;
+    align-self: center;
+    margin-left: 150px;
+    padding: 95px 125px;
     background-color: _theme.$third-bg-color;
+  }
+}
+
+.question {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  &__remark {
+    opacity: 0.5;
   }
 }

@@ -1,0 +1,25 @@
+@use "../../../styles/__theme";
+
+.footer {
+  @include _theme.flex(row, space-between);
+  height: 264px;
+  background-color: _theme.$primary-bg-color;
+  padding: 3rem 4rem;
+
+  &__brand-info {
+    @include _theme.flex(column, space-around);
+  }
+
+  &__list-info {
+    @include _theme.flex(row, null, center);
+    gap: 30px;
+  }
+}
+
+.brand-info {
+  &__social-icons {
+    display: flex;
+    opacity: 0.5;
+    gap: 10px;
+  }
+}
