@@ -1,0 +1,28 @@
+@use "@styles/__theme";
+
+.text-field {
+  @include _theme.flex(column, center);
+  &__label {
+    font-weight: 600;
+  }
+
+  > textarea {
+    font-family: "Inter", sans-serif;
+    max-width: 100%;
+    max-height: min-content;
+  }
+}
+
+.input {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  &-primary {
+    @extend .input;
+    background-color: _theme.$primary-bg-color;
+    color: _theme.$secondary-bg-color;
+  }
+  &-secondary {
+    background-color: _theme.$secondary-bg-color;
+    color: _theme.$primary-bg-color;
+  }
+}

@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import classes from "./Button.module.scss";
+import type { ColorTypes } from "@/types/ColorTypes";
 
 type ButtonProps = {
-  variant?: string;
-  size?: string;
+  variant: ColorTypes | string;
+  size: string;
   children: ReactNode;
   handleChange?: () => void;
 };
@@ -11,8 +12,8 @@ type ButtonProps = {
 const Button = ({
   children,
   handleChange,
-  variant = "primary",
-  size = "medium",
+  variant,
+  size,
   ...props
 }: ButtonProps) => {
   const buttonStyle = classes[`button-${variant}`];

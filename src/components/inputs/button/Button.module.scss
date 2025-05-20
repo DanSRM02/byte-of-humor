@@ -1,7 +1,7 @@
-@use "../../../styles/__theme";
+@use "@styles/__theme";
 
-.button {
-  font-family: _theme.$font-family-inter;
+.button {  
+  font-family: 'Inter', sans-serif;
   border-radius: 5px;
   border-style: none;
   font-weight: bold;

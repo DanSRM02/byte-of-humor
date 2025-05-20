@@ -1,4 +1,4 @@
-@use "../../styles/__theme";
+@use "@styles/__theme";
 
 .first-setup {
   display: flex;
@@ -18,13 +18,12 @@
 
   &__question {
     display: flex;
-    white-space: nowrap;    
+    white-space: nowrap;
     overflow: visible;
     flex-direction: column;
   }
 
   &__interaction {
-        
     padding: 6rem;
     background-color: _theme.$third-bg-color;
   }

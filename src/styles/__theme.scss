@@ -1,12 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
-/* Font Family*/
-$font-family-inter: "Inter", sans-serif;
-
 /* Principal Colors */
 $primary-bg-color: #ffffff !default;
 $secondary-bg-color: #222222 !default;
-$third-bg-color: #d9d9d9 !default;
+$third-bg-color: #f0f0f0 !default;
 
 @mixin flex($direction, $justify: null, $align: null) {
   display: flex;

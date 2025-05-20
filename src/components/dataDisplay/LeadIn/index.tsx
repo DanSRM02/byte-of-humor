@@ -2,7 +2,7 @@ import classes from "./LeadIn.module.scss";
 type LeadInProps = {
   heading: string;
   paragraph: string;
-  variant: string;
+  variant?: string;
 };
 const LeadIn = ({ heading, paragraph, variant = "primary" }: LeadInProps) => {
   let contentVariant;

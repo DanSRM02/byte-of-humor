@@ -1,12 +1,9 @@
-@use "../../../styles/__theme";
+@use "@styles/__theme";
 
-.card {
-  @include _theme.flex(column, space-between);
-  box-shadow: 1px 15px 18px -3px _theme.$third-bg-color;
-  padding: 1rem;
-  border-radius: 1.5rem;
-  width: minmax(20rem, 21rem);
-
+.card {  
+  box-shadow: 1px 15px 18px -10px _theme.$secondary-bg-color;
+  padding: 1.5rem;
+  border-radius: 1.5rem;  
 
   &__image {
     background-color: _theme.$third-bg-color;

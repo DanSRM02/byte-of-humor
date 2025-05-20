@@ -36,7 +36,7 @@ const Navigation = () => {
             </li>
             <li className={classes["header__nav-item"]}>
               <NavLink
-                to={"login"}
+                to={"log-in"}
                 className={(isActive) => activeClass(isActive)}
               >
                 Log In

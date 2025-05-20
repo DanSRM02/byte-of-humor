@@ -1,18 +1,21 @@
 import LeadIn from "@/components/dataDisplay/LeadIn";
 import Card from "@/components/feedback/Card";
-import colombiaImg from "../../assets/dark_colombia.png";
-import unitedStateImg from "../../assets/dark_image_united.png";
-import portugalImg from "../../assets/dar_portugal.png";
+import colombiaImg from "@assets/dark_colombia.png";
+import unitedStateImg from "@assets/dark_image_united.png";
+import portugalImg from "@assets/dar_portugal.png";
+import logoBoH from "@assets/logo-complete-recorted.png";
 import classes from "./TheMediumSetup.module.scss";
 import Button from "@/components/inputs/Button";
 function TheMediumSetupPage() {
   return (
     <>
-      <LeadIn      
-        heading="What is Bite of Humor?"
-        paragraph="Bite of Humor is a digital experience crafted to inject a quick, clever dose of laughter into your day. Blending design with humor, it offers curated jokes, playful interactions, and creative content that aim to entertain while challenging the ordinary. It's not just about making you laugh—it's about making you think, smile, and enjoy the unexpected."
-        variant=""
-      />
+      <section className={classes["lead-in__main"]}>
+        <LeadIn
+          heading="What is Bite of Humor?"
+          paragraph="Bite of Humor is a digital experience crafted to inject a quick, clever dose of laughter into your day. Blending design with humor, it offers curated jokes, playful interactions, and creative content that aim to entertain while challenging the ordinary. It's not just about making you laugh—it's about making you think, smile, and enjoy the unexpected."
+        />
+        <img src={logoBoH} />
+      </section>
       <h3>Jokes from multiple languages</h3>
       <section className={classes["card-content"]}>
         <Card
@@ -32,7 +35,7 @@ function TheMediumSetupPage() {
         />
       </section>
       <h3>Types Of Jokes</h3>
-      <section className={classes["lead-in"]}>
+      <section className={classes["lead-in__sub-main"]}>
         <LeadIn
           heading="Classic Jokes"
           paragraph="Enjoy a collection of timeless jokes! These are the tried-and-true classics that have been shared and chuckled over for generations, often with familiar setups and satisfying punchlines."
@@ -51,10 +54,15 @@ function TheMediumSetupPage() {
       </section>
       <section className={classes["advise"]}>
         <span>
-          <h2>Tell us a joke to enter.</h2>
-          <h2>Make us laugh, or at least try.</h2>
+          <h2>
+            Tell us a joke to enter.
+            <br />
+            Make us laugh, or at least try.
+          </h2>
         </span>
-        <Button variant="secondary" size="large"> Sign Up </Button>
+        <Button variant="secondary" size="large">
+          Sign Up
+        </Button>
       </section>
     </>
   );
