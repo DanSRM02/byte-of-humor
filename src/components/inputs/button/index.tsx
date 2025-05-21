@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, Ref } from "react";
 import classes from "./Button.module.scss";
 import type { ColorTypes } from "@/types/ColorTypes";
 
@@ -7,10 +7,12 @@ type ButtonProps = {
   size: string;
   children: ReactNode;
   handleChange?: () => void;
+  ref?: Ref<HTMLButtonElement> | null;
 };
 
 const Button = ({
   children,
+  ref,
   handleChange,
   variant,
   size,
@@ -21,6 +23,7 @@ const Button = ({
 
   return (
     <button
+      ref={ref}
       className={`${buttonStyle} ${sizeStyle}`}
       onClick={handleChange}
       {...props}

@@ -1,9 +1,11 @@
 @use "@styles/__theme";
 
-.card {  
-  box-shadow: 1px 15px 18px -10px _theme.$secondary-bg-color;
+.card {
+  background-color: _theme.$primary-bg-color;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  border-radius: 1.5rem;  
+  border-radius: 1.5rem;
+  transition: all 0.5s ease;
 
   &__image {
     background-color: _theme.$third-bg-color;
@@ -12,11 +14,36 @@
   }
 
   &__title {
-    margin: 1rem 0;
+    margin: 0 0 0.5rem 0;
   }
 
   &__body {
     opacity: 0.7;
     line-height: 1.2;
+  }
+
+  &:hover,
+  &:active {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.pill {
+  @extend .card;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  &__image {
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+    filter: grayscale(95%);
+  }
+
+  &__title {
+    align-self: initial;
+    margin: 0;
   }
 }

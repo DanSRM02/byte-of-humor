@@ -1,0 +1,23 @@
+@use "@styles/__theme";
+
+.select-country {
+    
+  background-color: _theme.$third-bg-color;
+  border-radius: 16px;
+  @include _theme.flex(null, space-around);
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 3.5rem;
+
+  &__aside {
+    @include _theme.flex(column);
+    gap: 2.5rem;
+
+  }
+
+  &__article {
+    @include _theme.flex(null, center, center);
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+}

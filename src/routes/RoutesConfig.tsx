@@ -6,19 +6,20 @@ import { createBrowserRouter } from "react-router-dom";
 import TheFinalSetupPage from "@/pages/TheFinalSetup";
 import LogIn from "@/pages/LogIn";
 import SignUp from "@/pages/SignUp";
+import SelectCountry from "@/pages/SelectCountry";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/:lang",
     element: <TheStartSetup />,
     errorElement: <ErrorPage />,
   },
   {
     path: "/:lang/setup",
-    element: <PublicLayout />,
+    element: <PublicLayout />,  
     children: [
       {
-        path: "medium",
+        index: true,
         element: <TheMediumSetup />,
       },
       {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "sign-up",
         element: <SignUp />,
+      },
+      {
+        path: "select-country",
+        element: <SelectCountry />,
       },
       {
         path: "final",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import classes from "./TheStartSetup.module.scss";
 import Button from "@/components/inputs/Button";
 import { buttonMessages } from "@/utils/const";
@@ -7,12 +7,13 @@ import { useNavigate } from "react-router-dom";
 
 function TheStartSetupPage() {
   const navigate = useNavigate();
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const [message, setMessage] = useState(buttonMessages[0]);
   const [timesClicked, setTimesClicked] = useState(0);
 
   function handleClick() {
     setTimesClicked((prev) => prev + 1);
-    const buttonUtil = modifyPositionElement("button");
+    const buttonUtil = modifyPositionElement(buttonRef.current);
     const shouldRedirectToNextStep = timesClicked === 4;
     const shouldChangePosition = timesClicked <= 2;
     const shouldDefaultPosition = timesClicked === 3;
@@ -26,7 +27,7 @@ function TheStartSetupPage() {
     }
 
     if (shouldRedirectToNextStep) {
-      navigate("/en/setup/medium");
+      navigate("/en/setup");
     }
 
     const currentIndex = buttonMessages.indexOf(message);
@@ -58,7 +59,7 @@ function TheStartSetupPage() {
           </p>
         </article>
         <article className={classes["first-setup__interaction"]}>
-          <Button size="medium" variant="primary" handleChange={handleClick}>
+          <Button size="medium" variant="primary" ref={buttonRef} handleChange={handleClick}>
             {message}
           </Button>
         </article>

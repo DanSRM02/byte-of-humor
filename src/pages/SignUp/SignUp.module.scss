@@ -1,0 +1,17 @@
+@use "@styles/__theme";
+
+.sign-up {
+  background-color: _theme.$third-bg-color;
+  padding: 3rem;
+  border-radius: 16px;
+  min-height: 35rem;
+  @include _theme.flex(row, center, center);
+
+  &__form {
+    @include _theme.flex(column, flex-start, stretch);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 550px;
+    margin-top: 2rem;
+  }
+}

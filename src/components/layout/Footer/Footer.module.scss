@@ -13,6 +13,7 @@
   &__list-info {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
   }
 }
@@ -21,6 +22,6 @@
   &__social-icons {
     display: flex;
     opacity: 0.5;
-    gap: 1rem;    
+    gap: 1rem;
   }
 }

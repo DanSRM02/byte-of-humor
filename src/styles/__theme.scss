@@ -11,9 +11,15 @@ $third-bg-color: #f0f0f0 !default;
 }
 
 /*Laptop Size*/
-@media (max-width: 70em) {
+@media (max-width: 75em) {
+  html {
+    font-size: 85%;
+  }
+}
+
+
+@media (max-width: 64em) {
   html {
     font-size: 72%;
   }
 }
-

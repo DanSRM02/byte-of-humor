@@ -1,6 +1,4 @@
-export function modifyPositionElement(element: string) {
-  const nodeElement: HTMLElement | null = document.querySelector(element);
-
+export function modifyPositionElement(element: HTMLElement | null) {
   interface maxOffsets {
     maxOffsetX: number;
     maxOffsetY: number;
@@ -8,9 +6,9 @@ export function modifyPositionElement(element: string) {
 
   function defaultPosition() {
     const transitionValue = "transform .2s ease";
-    if (nodeElement) {
-      nodeElement.style.transform = `translate(0, 0)`;
-      nodeElement.style.transition = transitionValue;
+    if (element) {
+      element.style.transform = `translate(0, 0)`;
+      element.style.transition = transitionValue;
     }
   }
 
@@ -19,9 +17,9 @@ export function modifyPositionElement(element: string) {
     const translateValue = `translate(${y}vh, ${x}vw)`;
     const transitionValue = "transform .2s ease";
 
-    if (nodeElement) {
-      nodeElement.style.transform = translateValue;
-      nodeElement.style.transition = transitionValue;
+    if (element) {
+      element.style.transform = translateValue;
+      element.style.transition = transitionValue;
     }
   }
 
@@ -29,8 +27,8 @@ export function modifyPositionElement(element: string) {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const elWidth = nodeElement?.offsetWidth ?? 100;
-    const elHeight = nodeElement?.offsetHeight ?? 100;
+    const elWidth = element?.offsetWidth ?? 100;
+    const elHeight = element?.offsetHeight ?? 100;
 
     let x = Math.random() * maxOffsetX;
     let y = Math.random() * maxOffsetY;

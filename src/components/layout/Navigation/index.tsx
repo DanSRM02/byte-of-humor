@@ -20,10 +20,10 @@ const Navigation = () => {
             </li>
             <li className={classes["header__nav-item"]}>
               <NavLink
-                to={"login"}
+                to={"."}
                 className={(isActive) => activeClass(isActive)}
               >
-                "Log In"
+                Home
               </NavLink>
             </li>
             <li className={classes["header__nav-item"]}>

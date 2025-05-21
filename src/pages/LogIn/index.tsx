@@ -6,9 +6,9 @@ import classes from "./LogIn.module.scss";
 function LogIn() {
   return (
     <>
-      <LeadIn
-        heading="Returning legend? Log in to keep the mic"
-        paragraph="A satire-powered playground blending cultural wit and creative rebellion — discover the story, the mission, and why laughter hits harder when it's honest."
+     <LeadIn
+        heading="Claim Your Spotlight"
+        paragraph="Don't let those punchlines go unheard. Sign up now to build your comedian profile, share your best material, and connect with a community that loves to laugh."
       />
       <section className={classes["log-in"]}>
         <form className={classes["log-in__form"]}>

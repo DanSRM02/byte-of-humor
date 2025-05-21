@@ -21,7 +21,7 @@
   &__main {
     background-color: _theme.$third-bg-color;
     padding: 1rem;
-    @include _theme.flex(row, space-around, center);
+    @include _theme.flex(null, center, center);
     flex-wrap: wrap;
     min-height: 24rem;
     border-radius: 1rem;
