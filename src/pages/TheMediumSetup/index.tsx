@@ -13,57 +13,57 @@ function TheMediumSetupPage() {
     <>
       <section className={classes["lead-in__main"]}>
         <LeadIn
-          heading={t("medium-setup.lead_in_main.heading")}
-          paragraph={t("medium-setup.lead_in_main.paragraph")}
+          heading={t("MediumSetup.leadInMain.heading")}
+          paragraph={t("MediumSetup.leadInMain.paragraph")}
         />
         <img src={logoBoH} />
       </section>
-      <h3>{t("medium-setup.jokes_languages_title")}</h3>
+      <h3>{t("MediumSetup.jokesLanguagesSection.title")}</h3>
       <section className={classes["card-content"]}>
         <Card
           img={unitedStateImg}
-          title="United States"
-          body="An American eagle on grill duty? A superhero zipping by on a scooter? A tiny horse for a tiny cowboy? This scene's got more layers than a deep-fried Twinkie. What's the punchline in this stars-and-stripes spectacle?"
+          title={t("MediumSetup.cards.unitedStates.title")}
+          body={t("MediumSetup.cards.unitedStates.body")}
         />
         <Card
           img={colombiaImg}
-          title="Colombia"
-          body="Survival of the quickest in Bogotá! As Transmilenio commuters make a mad dash, a man clutches his empanada like a prize. Street vendors hawk humor amidst the urban chaos, under the watchful eye of a weary guard."
+          title={t("MediumSetup.cards.colombia.title")}
+          body={t("MediumSetup.cards.colombia.body")}
         />
         <Card
           img={portugalImg}
-          title="Portugal"
-          body="Cobblestone streets, a determined grandma, a basket of bread, and a surprisingly speedy fish! This Portuguese pursuit is as charming as a Lisbon tram. What's the catch in this bizarre race?"
+          title={t("MediumSetup.cards.portugal.title")}
+          body={t("MediumSetup.cards.portugal.body")}
         />
       </section>
-      <h3>Types Of Jokes</h3>
+      <h3>{t("MediumSetup.typesOfJokesSection.title")}</h3>
       <section className={classes["lead-in__sub-main"]}>
         <LeadIn
-          heading="Classic Jokes"
-          paragraph="Enjoy a collection of timeless jokes! These are the tried-and-true classics that have been shared and chuckled over for generations, often with familiar setups and satisfying punchlines."
+          heading={t("MediumSetup.leadInSubMain.classicJokes.heading")}
+          paragraph={t("MediumSetup.leadInSubMain.classicJokes.paragraph")}
           variant="secondary"
         />
         <LeadIn
-          heading="Surreal Absurdity"
-          paragraph="Step into the bizarre and illogical! These jokes embrace the unexpected and nonsensical, where the humor comes from the delightful violation of reality and the sheer absurdity of the situation."
+          heading={t("MediumSetup.leadInSubMain.surrealAbsurdity.heading")}
+          paragraph={t("MediumSetup.leadInSubMain.surrealAbsurdity.paragraph")}
           variant="secondary"
         />
         <LeadIn
-          heading="Dad Jokes"
-          paragraph="Get ready for the signature blend of corniness and puns! These dad jokes feature slightly longer setups that build anticipation for the inevitably groan-worthy (yet sometimes charming) punchline. You've been warned!"
+          heading={t("MediumSetup.leadInSubMain.dadJokes.heading")}
+          paragraph={t("MediumSetup.leadInSubMain.dadJokes.paragraph")}
           variant="secondary"
         />
       </section>
       <section className={classes["advise"]}>
         <span>
           <h2>
-            Tell us a joke to enter.
+            {t("MediumSetup.adviseSection.mainText.line1")}
             <br />
-            Make us laugh, or at least try.
+            {t("MediumSetup.adviseSection.mainText.line2")}
           </h2>
         </span>
         <Button variant="secondary" size="large">
-          Sign Up
+          {t("MediumSetup.adviseSection.actionButton.text")}
         </Button>
       </section>
     </>

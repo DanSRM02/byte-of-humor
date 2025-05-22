@@ -1,26 +1,32 @@
 {
-  "first-setup": {
-    "title": "Por que você está aqui?",
-    "remark": "Você quer rir ou o quê?",
-    "paragraph1": "Se a resposta for “sim”, <1> so sorry </1> que este não é o lugar.",
-    "paragraph2": "Ou estou <1>joking?</1>",
-    "paragraph3": "Só há <1>one</1> maneira de saber...",
-    "button": {
-      "message1": "Entre na página real!",
-      "message2": "Quero rir, pressione novamente!",
-      "message3": "Ei, vamos lá, pressione novamente!",
-      "message4": "Esta é a última vez, prometo!",
-      "message5": "Entre na página real!"
+  "FirstSetup": {
+    "introduction": {
+      "title": "Por que você está aqui?",
+      "remark": "Você quer rir ou o quê?",
+      "paragraph1": "Se a resposta for “sim”, <1> so sorry </1> que este não é o lugar.",
+      "paragraph2": "Ou estou <1>joking?</1>",
+      "paragraph3": "Só há <1>one</1> maneira de saber..."
+    },
+    "actions": {
+      "buttonMessages": {
+        "message1": "Entre na página real!",
+        "message2": "Quero rir, pressione novamente!",
+        "message3": "Ei, vamos lá, pressione novamente!",
+        "message4": "Esta é a última vez, prometo!",
+        "message5": "Entre na página real!"
+      }
     }
   },
-  "medium-setup": {
-    "lead_in_main": {
+  "MediumSetup": {
+    "leadInMain": {
       "heading": "O que é Bite of Humor?",
       "paragraph": "Bite of Humor é uma experiência digital criada para injetar uma dose rápida e inteligente de riso no seu dia. Combinando design com humor, oferece piadas selecionadas, interações lúdicas e conteúdo criativo que visam entreter enquanto desafiam o comum. Não se trata apenas de fazer você rir — trata-se de fazer você pensar, sorrir e desfrutar do inesperado."
     },
-    "jokes_languages_title": "Piadas de várias línguas",
+    "jokesLanguagesSection": {
+      "title": "Piadas de várias línguas"
+    },
     "cards": {
-      "united_states": {
+      "unitedStates": {
         "title": "Estados Unidos",
         "body": "Uma águia americana de serviço na grelha? Um super-herói a passar de scooter? Um cavalo minúsculo para um cowboy minúsculo? Esta cena tem mais camadas que um Twinkie frito. Qual é o remate neste espetáculo de estrelas e riscas?"
       },
@@ -33,25 +39,91 @@
         "body": "Ruas de calçada, uma avó determinada, um cesto de pão e um peixe surpreendentemente rápido! Esta perseguição portuguesa é tão encantadora como um elétrico de Lisboa. Qual é o truque nesta corrida bizarra?"
       }
     },
-    "types_of_jokes_title": "Tipos de Piadas",
-    "lead_in_sub_main": {
-      "classic_jokes": {
+    "typesOfJokesSection": {
+      "title": "Tipos de Piadas"
+    },
+    "leadInSubMain": {
+      "classicJokes": {
         "heading": "Piadas Clássicas",
         "paragraph": "Desfrute de uma coleção de piadas intemporais! Estes são os clássicos testados e aprovados que foram partilhados e ridos por gerações, muitas vezes com preparações familiares e remates satisfatórios."
       },
-      "surreal_absurdity": {
+      "surrealAbsurdity": {
         "heading": "Absurdo Surreal",
         "paragraph": "Entre no bizarro e ilógico! Estas piadas abraçam o inesperado e o sem sentido, onde o humor vem da deliciosa violação da realidade e da pura absurdidade da situação."
       },
-      "dad_jokes": {
+      "dadJokes": {
         "heading": "Piadas de Pai",
         "paragraph": "Prepare-se para a mistura de piadas secas e trocadilhos! Estas piadas de pai apresentam preparações um pouco mais longas que criam antecipação para o remate inevitavelmente embaraçoso (mas por vezes charmoso). Você foi avisado!"
       }
     },
-    "advise_section": {
-      "main_text_line1": "Conte-nos uma piada para entrar.",
-      "main_text_line2": "Faça-nos rir, ou pelo menos tente.",
-      "button_text": "Inscrever-se"
+    "adviseSection": {
+      "mainText": {
+        "line1": "Conte-nos uma piada para entrar.",
+        "line2": "Faça-nos rir, ou pelo menos tente."
+      },
+      "actionButton": {
+        "text": "Inscrever-se"
+      }
+    }
+  },
+  "ErrorPage": {
+    "content": {
+      "title": "Página de Erro",
+      "message": "Ocorreu um erro!"
+    }
+  },
+  "ComedianSignUpForm": {
+    "introduction": {
+      "heading": "Reivindique seu Destaque",
+      "paragraph": "Não deixe essas piadas passarem em branco. Inscreva-se agora para criar seu perfil de comediante, compartilhar seu melhor material e conectar-se com uma comunidade que adora rir."
+    },
+    "fields": {
+      "namePlaceholder": "Escolha um nome de comediante",
+      "nameLabel": "Nome de comediante",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Email do comediante",
+      "jokeLabel": "Piada de comediante",
+      "jokePlaceholder": "Insira sua piada"
+    },
+    "actions": {
+      "submitButton": "Junte-se a nós"
+    }
+  },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Escolha Seu Palco Global!",
+      "paragraph": "Bite of Humor conecta você com comédia de todos os cantos. Diga-nos onde você quer começar sua jornada de humor."
+    },
+    "searchControls": {
+      "inputPlaceholder": "Pesquise seu país...",
+      "continueButtonLabel": "Continuar com \"SelectCountry\""
+    },
+    "countryNames": {
+      "unitedStates": "Estados Unidos",
+      "portugal": "Portugal",
+      "colombia": "Colômbia"
+    }
+  },
+  "ComedianLoginForm": {
+    "introduction": {
+      "heading": "Lenda retornando? Faça login para manter o microfone",
+      "paragraph": "Um playground movido a sátira que mistura sagacidade cultural e rebelião criativa — descubra a história, a missão e por que o riso bate mais forte quando é honesto."
+    },
+    "fields": {
+      "namePlaceholder": "Escolha um nome de comediante",
+      "nameLabel": "Nome de comediante",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Email do comediante"
+    },
+    "actions": {
+      "submitButton": "Entre no Humor"
+    }
+  },
+  "HeaderNavigation": {
+    "navItems": {
+      "home": "Início",
+      "signUp": "Inscreva-se",
+      "logIn": "Entrar"
     }
   }
 }

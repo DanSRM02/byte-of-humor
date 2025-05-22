@@ -4,7 +4,7 @@ import classes from "./TextField.module.scss";
 
 type TextFieldProps = {
   color: ColorTypes | string;
-  size: string;
+
   placeholder: string;
   children?: ReactNode;
   type?: string;
@@ -19,7 +19,6 @@ type TextFieldProps = {
 };
 const TextField = ({
   color,
-  size,
   disabled = false,
   error = false,
   placeholder,
@@ -35,11 +34,10 @@ const TextField = ({
 }: TextFieldProps) => {
   const formatLabel = label?.split(" ").join("-").toLowerCase();
   const inputColorStyle = classes[`input-${color}`];
-  const inputTypeStyle = classes[`size-${size}`];
   let inputType = (
     <>
       <input
-        className={`${inputColorStyle} ${inputTypeStyle}`}
+        className={inputColorStyle}
         id={formatLabel}
         type={type}
         placeholder={placeholder}
@@ -54,7 +52,7 @@ const TextField = ({
     inputType = (
       <>
         <textarea
-          className={`${inputColorStyle} ${inputTypeStyle}`}
+          className={inputColorStyle}
           name={formatLabel}
           id={formatLabel}
           rows={rows}

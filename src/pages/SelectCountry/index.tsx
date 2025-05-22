@@ -6,8 +6,11 @@ import Card from "@/components/feedback/Card";
 import flagUSA from "@assets/flag-united-states.png";
 import flagCO from "@assets/flag-colombia.png";
 import flagPT from "@assets/flag-portugal.png";
+import { useRef } from "react";
 
 function SelectCountry() {
+  const pillReference = useRef<HTMLElement>(null);
+
   return (
     <>
       <section className={classes["select-country"]}>
@@ -21,16 +24,15 @@ function SelectCountry() {
             color="primary"
             placeholder="Search Your Country..."
             type="search"
-            size="medium"
           />
           <Button variant="primary" size="medium">
             Continue with "SelectCountry"
           </Button>
         </aside>
         <article className={classes["select-country__article"]}>
-          <Card img={flagUSA} title="United States" body="" pill />
-          <Card img={flagPT} title="Portugal" body="" pill />
-          <Card img={flagCO} title="Colombia" body="" pill />
+          <Card img={flagUSA} title="United States" pill ref={pillReference} />
+          <Card img={flagPT} title="Portugal" pill ref={pillReference} />
+          <Card img={flagCO} title="Colombia" pill ref={pillReference} />
         </article>
       </section>
     </>

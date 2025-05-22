@@ -13,7 +13,6 @@ const router = createBrowserRouter([
   {
     path: "/:lang",
     element: <LanguageWrapper />,
-    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -45,6 +44,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: "*", element: <ErrorPage /> }
     ],
   },
 ]);

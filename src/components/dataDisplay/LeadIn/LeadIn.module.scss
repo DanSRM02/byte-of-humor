@@ -1,4 +1,7 @@
-.lead-in {
+.lead-in {  
+  &__heading{
+    max-width: 37rem;
+  }
   &__paragraph {
     margin-top: 1rem;
     max-width: 45rem;

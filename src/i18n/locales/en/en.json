@@ -1,27 +1,32 @@
 {
-  "first-setup": {
-    "title": "Why are you here?",
-    "remark": "You want to laugh or what?",
-    "paragraph1": "If the answer is “yes”, <1> so sorry </1> that's not the place.",
-    "paragraph2": "Or I'm <1>joking?</1>",
-    "paragraph3": "There's only <1>one</1> way to know...",
-    "button": {
-      "message1": "Enter into the real page!",
-      "message2": "I want to laugh, press again!",
-      "message3": "Hey come on, press again!",
-      "message4": "This is the last time, I promise!",
-      "message5": "Enter into the real page!"
+  "FirstSetup": {
+    "introduction": {
+      "title": "Why are you here?",
+      "remark": "You want to laugh or what?",
+      "paragraph1": "If the answer is “yes”, <1> so sorry </1> that's not the place.",
+      "paragraph2": "Or I'm <1>joking?</1>",
+      "paragraph3": "There's only <1>one</1> way to know..."
+    },
+    "actions": {
+      "buttonMessages": {
+        "message1": "Enter into the real page!",
+        "message2": "I want to laugh, press again!",
+        "message3": "Hey come on, press again!",
+        "message4": "This is the last time, I promise!",
+        "message5": "Enter into the real page!"
+      }
     }
   },
-
-  "medium-setup": {
-    "lead_in_main": {
+  "MediumSetup": {
+    "leadInMain": {
       "heading": "What is Bite of Humor?",
       "paragraph": "Bite of Humor is a digital experience crafted to inject a quick, clever dose of laughter into your day. Blending design with humor, it offers curated jokes, playful interactions, and creative content that aim to entertain while challenging the ordinary. It's not just about making you laugh—it's about making you think, smile, and enjoy the unexpected."
     },
-    "jokes_languages_title": "Jokes from multiple languages",
+    "jokesLanguagesSection": {
+      "title": "Jokes from multiple languages"
+    },
     "cards": {
-      "united_states": {
+      "unitedStates": {
         "title": "United States",
         "body": "An American eagle on grill duty? A superhero zipping by on a scooter? A tiny horse for a tiny cowboy? This scene's got more layers than a deep-fried Twinkie. What's the punchline in this stars-and-stripes spectacle?"
       },
@@ -34,25 +39,91 @@
         "body": "Cobblestone streets, a determined grandma, a basket of bread, and a surprisingly speedy fish! This Portuguese pursuit is as charming as a Lisbon tram. What's the catch in this bizarre race?"
       }
     },
-    "types_of_jokes_title": "Types Of Jokes",
-    "lead_in_sub_main": {
-      "classic_jokes": {
+    "typesOfJokesSection": {
+      "title": "Types Of Jokes"
+    },
+    "leadInSubMain": {
+      "classicJokes": {
         "heading": "Classic Jokes",
         "paragraph": "Enjoy a collection of timeless jokes! These are the tried-and-true classics that have been shared and chuckled over for generations, often with familiar setups and satisfying punchlines."
       },
-      "surreal_absurdity": {
+      "surrealAbsurdity": {
         "heading": "Surreal Absurdity",
         "paragraph": "Step into the bizarre and illogical! These jokes embrace the unexpected and nonsensical, where the humor comes from the delightful violation of reality and the sheer absurdity of the situation."
       },
-      "dad_jokes": {
+      "dadJokes": {
         "heading": "Dad Jokes",
         "paragraph": "Get ready for the signature blend of corniness and puns! These dad jokes feature slightly longer setups that build anticipation for the inevitably groan-worthy (yet sometimes charming) punchline. You've been warned!"
       }
     },
-    "advise_section": {
-      "main_text_line1": "Tell us a joke to enter.",
-      "main_text_line2": "Make us laugh, or at least try.",
-      "button_text": "Sign Up"
+    "adviseSection": {
+      "mainText": {
+        "line1": "Tell us a joke to enter.",
+        "line2": "Make us laugh, or at least try."
+      },
+      "actionButton": {
+        "text": "Sign Up"
+      }
+    }
+  },
+  "ErrorPage": {
+    "content": {
+      "title": "Error Page",
+      "message": "An error occured!"
+    }
+  },
+  "ComedianSignUpForm": {
+    "introduction": {
+      "heading": "Claim Your Spotlight",
+      "paragraph": "Don't let those punchlines go unheard. Sign up now to build your comedian profile, share your best material, and connect with a community that loves to laugh."
+    },
+    "fields": {
+      "namePlaceholder": "Pick a comedian name",
+      "nameLabel": "Comedian Name",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Comedian Email",
+      "jokeLabel": "Comedian Joke",
+      "jokePlaceholder": "Enter your joke"
+    },
+    "actions": {
+      "submitButton": "Join us"
+    }
+  },
+  "ComedianLoginForm": {
+    "introduction": {
+      "heading": "Returning legend? Log in to keep the mic",
+      "paragraph": "A satire-powered playground blending cultural wit and creative rebellion — discover the story, the mission, and why laughter hits harder when it's honest."
+    },
+    "fields": {
+      "namePlaceholder": "Pick a comedian name",
+      "nameLabel": "Comedian Name",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Comedian Email"
+    },
+    "actions": {
+      "submitButton": "Enter into the Humor"
+    }
+  },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Choose Your Global Stage!",
+      "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
+    },
+    "searchControls": {
+      "inputPlaceholder": "Search Your Country...",
+      "continueButtonLabel": "Continue with \"SelectCountry\""
+    },
+    "countryNames": {
+      "unitedStates": "United States",
+      "portugal": "Portugal",
+      "colombia": "Colombia"
+    }
+  },
+  "HeaderNavigation": {
+    "navItems": {
+      "home": "Home",
+      "signUp": "Sign Up",
+      "logIn": "Log In"
     }
   }
 }

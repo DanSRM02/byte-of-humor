@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 function ErrorPage() {
+  const { t } = useTranslation();
   return (
     <>
       <main>
-        <h2>Error Page</h2>
-        <p>An error occured!</p>
+        <h2>{t("ErrorPage.content.title")}</h2>
+        <p>{t("ErrorPage.content.message")}</p>
       </main>
     </>
   );

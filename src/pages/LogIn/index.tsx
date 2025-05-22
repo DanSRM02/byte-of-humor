@@ -2,43 +2,34 @@ import LeadIn from "@/components/dataDisplay/LeadIn";
 import Button from "@/components/inputs/Button";
 import TextField from "@/components/inputs/TextField";
 import classes from "./LogIn.module.scss";
+import { useTranslation } from "react-i18next";
 
 function LogIn() {
+  const { t } = useTranslation();
   return (
     <>
-     <LeadIn
-        heading="Claim Your Spotlight"
-        paragraph="Don't let those punchlines go unheard. Sign up now to build your comedian profile, share your best material, and connect with a community that loves to laugh."
+      <LeadIn
+        heading={t("ComedianLoginForm.introduction.heading")}
+        paragraph={t("ComedianLoginForm.introduction.paragraph")}
       />
       <section className={classes["log-in"]}>
         <form className={classes["log-in__form"]}>
-          <span className={classes["fieldset__first-elements"]}>
-            <TextField
-              placeholder="Pick a comedian name"
-              label="Comedian Name"
-              color="primary"
-              type="text"
-              size="medium"
-            />
-
-            <TextField
-              placeholder="email@janesfakedomain.net"
-              label="Comedian Email"
-              color="primary"
-              type="email"
-              size="medium"
-            />
-          </span>
           <TextField
-            size="medium"
-            label="Comedian Joke"
-            placeholder="Enter your joke"
+            placeholder={t("ComedianLoginForm.fields.namePlaceholder")}
+            label={t("ComedianLoginForm.fields.nameLabel")}
             color="primary"
-            multiline
-            rows={5}
+            type="text"
           />
+
+          <TextField
+            placeholder={t("ComedianLoginForm.fields.emailPlaceholder")}
+            label={t("ComedianLoginForm.fields.emailLabel")}
+            color="primary"
+            type="email"
+          />
+
           <Button variant={"primary"} size="medium">
-            Join us
+            {t("ComedianLoginForm.actions.submitButton")}
           </Button>
         </form>
       </section>

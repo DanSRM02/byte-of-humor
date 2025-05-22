@@ -5,24 +5,13 @@
   padding: 3rem;
   border-radius: 16px;
   min-height: 35rem;
-  @include _theme.flex(null, center);
+  @include _theme.flex(row, center, center);
 
   &__form {
-    @include _theme.flex(column,);
+    @include _theme.flex(column);
     gap: 1.5rem;
     width: 100%;
-    max-width: 45rem;
-    margin-top: 3rem;
-  }
-}
-
-.fieldset__first-elements {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 1rem;
-  width: 100%;
-  > * {
-    flex: 1;
+    max-width: 550px;
+    
   }
 }

@@ -6,6 +6,9 @@
   padding: 1.5rem;
   border-radius: 1.5rem;
   transition: all 0.5s ease;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 
   &__image {
     background-color: _theme.$third-bg-color;
@@ -31,7 +34,7 @@
 
 .pill {
   @extend .card;
-  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 2.5rem;
 
