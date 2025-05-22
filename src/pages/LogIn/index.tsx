@@ -18,6 +18,7 @@ function LogIn() {
               label="Comedian Name"
               color="primary"
               type="text"
+              size="medium"
             />
 
             <TextField
@@ -25,9 +26,11 @@ function LogIn() {
               label="Comedian Email"
               color="primary"
               type="email"
+              size="medium"
             />
           </span>
           <TextField
+            size="medium"
             label="Comedian Joke"
             placeholder="Enter your joke"
             color="primary"

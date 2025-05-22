@@ -6,17 +6,19 @@ import portugalImg from "@assets/dar_portugal.png";
 import logoBoH from "@assets/logo-complete-recorted.png";
 import classes from "./TheMediumSetup.module.scss";
 import Button from "@/components/inputs/Button";
+import { useTranslation } from "react-i18next";
 function TheMediumSetupPage() {
+  const { t } = useTranslation();
   return (
     <>
       <section className={classes["lead-in__main"]}>
         <LeadIn
-          heading="What is Bite of Humor?"
-          paragraph="Bite of Humor is a digital experience crafted to inject a quick, clever dose of laughter into your day. Blending design with humor, it offers curated jokes, playful interactions, and creative content that aim to entertain while challenging the ordinary. It's not just about making you laugh—it's about making you think, smile, and enjoy the unexpected."
+          heading={t("medium-setup.lead_in_main.heading")}
+          paragraph={t("medium-setup.lead_in_main.paragraph")}
         />
         <img src={logoBoH} />
       </section>
-      <h3>Jokes from multiple languages</h3>
+      <h3>{t("medium-setup.jokes_languages_title")}</h3>
       <section className={classes["card-content"]}>
         <Card
           img={unitedStateImg}

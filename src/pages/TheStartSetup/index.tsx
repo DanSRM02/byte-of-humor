@@ -1,22 +1,27 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classes from "./TheStartSetup.module.scss";
 import Button from "@/components/inputs/Button";
-import { buttonMessages } from "@/utils/const";
 import { modifyPositionElement } from "./helper";
 import { useNavigate } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 function TheStartSetupPage() {
   const navigate = useNavigate();
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [message, setMessage] = useState(buttonMessages[0]);
-  const [timesClicked, setTimesClicked] = useState(0);
+  const { t } = useTranslation();
+  const [message, setMessage] = useState("");
+  const [timesClicked, setTimesClicked] = useState(2);
+
+  useEffect(() => {
+    setMessage(t("first-setup.button.message1"));
+  }, [t]);
 
   function handleClick() {
     setTimesClicked((prev) => prev + 1);
     const buttonUtil = modifyPositionElement(buttonRef.current);
-    const shouldRedirectToNextStep = timesClicked === 4;
-    const shouldChangePosition = timesClicked <= 2;
-    const shouldDefaultPosition = timesClicked === 3;
+    const shouldRedirectToNextStep = timesClicked === 6;
+    const shouldChangePosition = timesClicked <= 4;
+    const shouldDefaultPosition = timesClicked === 5;
 
     if (shouldChangePosition) {
       buttonUtil.changePosition({ maxOffsetX: 25, maxOffsetY: 25 });
@@ -27,13 +32,12 @@ function TheStartSetupPage() {
     }
 
     if (shouldRedirectToNextStep) {
-      navigate("/en/setup");
+      navigate("setup");
     }
 
-    const currentIndex = buttonMessages.indexOf(message);
-    const nextIndex = (currentIndex + 1) % buttonMessages.length;
+    const messageTranslated = t(`first-setup.button.message${timesClicked}`);
 
-    setMessage(buttonMessages[nextIndex]);
+    setMessage(messageTranslated);
   }
 
   return (
@@ -43,23 +47,36 @@ function TheStartSetupPage() {
         <article
           className={`${classes["first-setup__question"]} ${classes["question"]}`}
         >
-          <h2 className={classes["question__subtitle"]}>Why are you here?</h2>
+          <h2 className={classes["question__subtitle"]}>
+            {t("first-setup.title")}
+          </h2>
           <h5 className={classes["question__remark"]}>
-            You want to laugh or what?
+            {t("first-setup.remark")}
           </h5>
           <p className={classes["question__paragraph"]}>
-            If the answer is “yes”, I'm
-            <em> so sorry </em> that's not the place.
+            <Trans i18nKey="first-setup.paragraph1">
+              If the answer is “yes”, I'm
+              <em> so sorry </em> that's not the place.
+            </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
-            Or I'm <em>joking?</em>
+            <Trans i18nKey="first-setup.paragraph2">
+              Or I'm <em>joking?</em>
+            </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
-            There only <strong>one</strong> way to know...
+            <Trans i18nKey="first-setup.paragraph3">
+              There's only <strong>one</strong> way to know...
+            </Trans>
           </p>
         </article>
         <article className={classes["first-setup__interaction"]}>
-          <Button size="medium" variant="primary" ref={buttonRef} handleChange={handleClick}>
+          <Button
+            size="medium"
+            variant="primary"
+            ref={buttonRef}
+            handleChange={handleClick}
+          >
             {message}
           </Button>
         </article>

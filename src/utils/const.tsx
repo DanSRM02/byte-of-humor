@@ -1,11 +1,8 @@
 import type { UnorderedListImpl } from "@/types/UnorderedListImpl";
 
-export const buttonMessages: string[] = [
-  "Enter into the real page!",
-  "I want to laugh, press again!",
-  "Hey come on, press again!",
-  "This is the last time, I promise!",
-];
+export const DEFAULT_LANG = "en";
+export const SUPPORTED_LANGS = ["es", "pt"];
+
 
 export const informationListOne: UnorderedListImpl = {
   title: "Core Concepts",
@@ -33,4 +30,3 @@ export const informationListThree: UnorderedListImpl = {
     { subtitle: "Design Challenges", link: "/community/challenges" },
   ],
 };
- 

@@ -12,14 +12,6 @@ const Navigation = () => {
           <ul className={classes["header__nav-list"]}>
             <li className={classes["header__nav-item"]}>
               <NavLink
-                to={"sign-up"}
-                className={(isActive) => activeClass(isActive)}
-              >
-                "Sign Up"
-              </NavLink>
-            </li>
-            <li className={classes["header__nav-item"]}>
-              <NavLink
                 to={"."}
                 className={(isActive) => activeClass(isActive)}
               >
