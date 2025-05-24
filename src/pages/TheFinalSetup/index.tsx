@@ -1,5 +1,12 @@
+// import LeadIn from "@/components/dataDisplay/LeadIn";
+
 function TheFinalSetupPage() {
-  return <></>;
+
+  return (
+    <>
+      {}
+    </>
+  );
 }
 
 export default TheFinalSetupPage;

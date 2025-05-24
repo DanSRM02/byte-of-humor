@@ -1,38 +1,46 @@
 import LeadIn from "@/components/dataDisplay/LeadIn";
-import Button from "@/components/inputs/Button";
 import classes from "./SelectCountry.module.scss";
-import TextField from "@/components/inputs/TextField";
-import Card from "@/components/feedback/Card";
-import flagUSA from "@assets/flag-united-states.png";
-import flagCO from "@assets/flag-colombia.png";
-import flagPT from "@assets/flag-portugal.png";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import Button from "@/components/inputs/Button";
+import { countries } from "@/utils/const";
+import { useNavigate } from "react-router-dom";
 
 function SelectCountry() {
-  const pillReference = useRef<HTMLElement>(null);
+  const { t, i18n } = useTranslation();
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const navigate = useNavigate();
+
+  const handleClick = (code: string) => {
+    setSelectedCountry(code);
+  };
+
+  useEffect(() => {
+    if (selectedCountry && selectedCountry !== "") {
+      navigate(`/${i18n.language}-${selectedCountry}/setup/final`);
+    }
+  }, [selectedCountry]);
 
   return (
     <>
       <section className={classes["select-country"]}>
         <aside className={classes["select-country__aside"]}>
           <LeadIn
-            heading="Choose Your Global Stage!"
-            paragraph="Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
+            heading={t("SelectCountry.introduction.heading")}
+            paragraph={t("SelectCountry.introduction.paragraph")}
           />
-
-          <TextField
-            color="primary"
-            placeholder="Search Your Country..."
-            type="search"
-          />
-          <Button variant="primary" size="medium">
-            Continue with "SelectCountry"
-          </Button>
         </aside>
         <article className={classes["select-country__article"]}>
-          <Card img={flagUSA} title="United States" pill ref={pillReference} />
-          <Card img={flagPT} title="Portugal" pill ref={pillReference} />
-          <Card img={flagCO} title="Colombia" pill ref={pillReference} />
+          {countries.map((country, index) => (
+            <Button
+              key={`${index}${country.code}`}
+              variant="secondary"
+              size="medium"
+              onClick={() => handleClick(country.code)}
+            >
+              {country.name}
+            </Button>
+          ))}
         </article>
       </section>
     </>

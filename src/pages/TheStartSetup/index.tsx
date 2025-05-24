@@ -13,7 +13,7 @@ function TheStartSetupPage() {
   const [timesClicked, setTimesClicked] = useState(2);
 
   useEffect(() => {
-    setMessage(t("first-setup.button.message1"));
+    setMessage(t("FirstSetup.actions.buttonMessages.message1"));
   }, [t]);
 
   function handleClick() {
@@ -35,7 +35,9 @@ function TheStartSetupPage() {
       navigate("setup");
     }
 
-    const messageTranslated = t(`first-setup.button.message${timesClicked}`);
+    const messageTranslated = t(
+      `FirstSetup.actions.buttonMessages.message${timesClicked}`
+    );
 
     setMessage(messageTranslated);
   }
@@ -48,24 +50,24 @@ function TheStartSetupPage() {
           className={`${classes["first-setup__question"]} ${classes["question"]}`}
         >
           <h2 className={classes["question__subtitle"]}>
-            {t("first-setup.title")}
+            {t("FirstSetup.introduction.title")}
           </h2>
           <h5 className={classes["question__remark"]}>
-            {t("first-setup.remark")}
+            {t("FirstSetup.introduction.remark")}
           </h5>
           <p className={classes["question__paragraph"]}>
-            <Trans i18nKey="first-setup.paragraph1">
+            <Trans i18nKey="FirstSetup.introduction.paragraph1">
               If the answer is “yes”, I'm
               <em> so sorry </em> that's not the place.
             </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
-            <Trans i18nKey="first-setup.paragraph2">
+            <Trans i18nKey="FirstSetup.introduction.paragraph2">
               Or I'm <em>joking?</em>
             </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
-            <Trans i18nKey="first-setup.paragraph3">
+            <Trans i18nKey="FirstSetup.introduction.paragraph3">
               There's only <strong>one</strong> way to know...
             </Trans>
           </p>
@@ -75,7 +77,7 @@ function TheStartSetupPage() {
             size="medium"
             variant="primary"
             ref={buttonRef}
-            handleChange={handleClick}
+            onClick={handleClick}
           >
             {message}
           </Button>

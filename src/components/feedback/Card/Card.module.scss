@@ -31,22 +31,3 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 }
-
-.pill {
-  @extend .card;
-  flex-direction: row;
-  align-items: center;
-  gap: 2.5rem;
-
-  &__image {
-    height: 4rem;
-    width: 4rem;
-    object-fit: contain;
-    filter: grayscale(95%);
-  }
-
-  &__title {
-    align-self: initial;
-    margin: 0;
-  }
-}

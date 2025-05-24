@@ -7,8 +7,15 @@ import logoBoH from "@assets/logo-complete-recorted.png";
 import classes from "./TheMediumSetup.module.scss";
 import Button from "@/components/inputs/Button";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 function TheMediumSetupPage() {
   const { t } = useTranslation();
+  const navigation = useNavigate();
+
+  const handleRedirection = () => {
+    navigation("sign-up")
+  };
+
   return (
     <>
       <section className={classes["lead-in__main"]}>
@@ -55,14 +62,14 @@ function TheMediumSetupPage() {
         />
       </section>
       <section className={classes["advise"]}>
-        <span>
+        <span className={classes["advise__heading"]}>
           <h2>
             {t("MediumSetup.adviseSection.mainText.line1")}
             <br />
             {t("MediumSetup.adviseSection.mainText.line2")}
           </h2>
         </span>
-        <Button variant="secondary" size="large">
+        <Button onClick={handleRedirection} variant="secondary" size="large">
           {t("MediumSetup.adviseSection.actionButton.text")}
         </Button>
       </section>

@@ -6,14 +6,15 @@ type ButtonProps = {
   variant: ColorTypes | string;
   size: string;
   children: ReactNode;
-  handleChange?: () => void;
+  icon?: string;
   ref?: Ref<HTMLButtonElement> | null;
+  onClick?: () => void;
 };
 
 const Button = ({
   children,
   ref,
-  handleChange,
+  onClick,
   variant,
   size,
   ...props
@@ -25,7 +26,7 @@ const Button = ({
     <button
       ref={ref}
       className={`${buttonStyle} ${sizeStyle}`}
-      onClick={handleChange}
+      onClick={onClick}
       {...props}
     >
       {children}

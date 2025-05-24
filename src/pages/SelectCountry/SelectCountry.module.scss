@@ -1,7 +1,6 @@
 @use "@styles/__theme";
 
 .select-country {
-    
   background-color: _theme.$third-bg-color;
   border-radius: 16px;
   @include _theme.flex(null, space-around);
@@ -10,9 +9,8 @@
   padding: 3.5rem;
 
   &__aside {
-    @include _theme.flex(column);
+    @include _theme.flex(column, null, center);
     gap: 2.5rem;
-
   }
 
   &__article {

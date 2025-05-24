@@ -11,10 +11,16 @@
 .advise {
   @include _theme.flex(null, center, center);
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 5rem;
   background-color: _theme.$third-bg-color;
   padding: 2.5rem;
   border-radius: 1rem;
+
+  &__heading {
+    > h2 {
+      margin-top: 1rem;
+    }
+  }
 }
 
 .lead-in {

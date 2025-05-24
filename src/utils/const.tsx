@@ -1,7 +1,14 @@
+import type { Country } from "@/types/CountryTypes";
 import type { InformationListData } from "@/types/UnorderedListImpl";
 
 export const DEFAULT_LANG = "en";
 export const SUPPORTED_LANGS = ["es", "pt"];
+
+export const countries: Country[] = [
+  { code: "US", name: "USA", flag: "🇺🇸" },
+  { code: "PT", name: "Portugal", flag: "🇵🇹" },
+  { code: "CO", name: "Colombia", flag: "🇨🇴" },
+];
 
 export const informationListEN: InformationListData = [
   {

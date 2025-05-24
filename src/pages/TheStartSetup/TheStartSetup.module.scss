@@ -11,9 +11,9 @@
 
   &__container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 2.5rem;
+    flex-wrap: wrap;
+    gap: 5rem;
   }
 
   &__question {
@@ -24,7 +24,9 @@
   }
 
   &__interaction {
-    padding: 6rem;
+    display: flex;
+    justify-content: center;
+    padding: 7rem;
     background-color: _theme.$third-bg-color;
   }
 }
