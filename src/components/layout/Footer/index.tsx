@@ -6,25 +6,26 @@ import UnorderedList from "@/components/dataDisplay/UnorderedList";
 
 import {
   informationListEN,
-  informationListES,
-  informationListPT,
+  informationListFR,
+  informationListDE,
 } from "@/utils/const";
 import { type UnorderedListImpl } from "@/types/UnorderedListImpl";
 
 const Footer = () => {
-  const params = useParams<{ lang?: string }>();
+  const { lang } = useParams<{ lang?: string }>();
   const currentYear = new Date().getFullYear();
 
   let currentInfoList: UnorderedListImpl[];
 
-  const langParam = params.lang ? params.lang.toUpperCase() : "EN";
+  const languageAndLocale = lang?.split("-");
+  let currentLanguage = languageAndLocale?.[0].toUpperCase();
 
-  switch (langParam) {
-    case "ES":
-      currentInfoList = informationListES;
+  switch (currentLanguage) {
+    case "FR":
+      currentInfoList = informationListFR;
       break;
-    case "PT":
-      currentInfoList = informationListPT;
+    case "DE":
+      currentInfoList = informationListDE;
       break;
     case "EN":
     default:

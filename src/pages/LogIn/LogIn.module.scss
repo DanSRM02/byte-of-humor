@@ -1,16 +1,17 @@
 @use "@styles/__theme";
 
 .log-in {
-  background-color: _theme.$third-bg-color;
+  @include _theme.flex(null, center, center);
+  @include _theme.styled-border;
+  flex-wrap: wrap;
   padding: 3rem;
-  border-radius: 16px;
   min-height: 35rem;
-  @include _theme.flex(row, center, center);
+  gap: 10rem;
 
   &__form {
     @include _theme.flex(column);
     gap: 1.5rem;
     width: 100%;
-    max-width: 550px;    
+    max-width: 550px;
   }
 }

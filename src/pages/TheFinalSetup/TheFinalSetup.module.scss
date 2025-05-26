@@ -1,0 +1,21 @@
+@use "@styles/__theme";
+.features {
+  @include _theme.flex(column);
+  gap: 5rem;
+  &__dashboard {
+    @include _theme.styled-border;
+  }
+  &__container {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.dashboard {
+  &__buttons {
+    @include _theme.flex(null, center);
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

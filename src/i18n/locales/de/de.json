@@ -1,0 +1,129 @@
+{
+  "FirstSetup": {
+    "introduction": {
+      "title": "Warum bist du hier?",
+      "remark": "Willst du lachen oder was?",
+      "paragraph1": "Wenn die Antwort „Ja“ ist, <1> tut es mir leid </1>, aber das hier ist nicht der richtige Ort.",
+      "paragraph2": "Oder <1>scherze</1> ich nur?",
+      "paragraph3": "Es gibt nur <1>einen</1> Weg, das herauszufinden..."
+    },
+    "actions": {
+      "buttonMessages": {
+        "message1": "Betritt die echte Seite!",
+        "message2": "Ich will lachen, drücke nochmal!",
+        "message3": "Hey, komm schon, drücke nochmal!",
+        "message4": "Das ist das letzte Mal, versprochen!",
+        "message5": "Betritt die echte Seite!"
+      }
+    }
+  },
+  "MediumSetup": {
+    "leadInMain": {
+      "heading": "Was ist Bite of Humor?",
+      "paragraph": "Bite of Humor ist ein digitales Erlebnis, das geschaffen wurde, um eine schnelle, clevere Dosis Lachen in deinen Tag zu bringen. Es verbindet Design mit Humor und bietet kuratierte Witze, spielerische Interaktionen und kreative Inhalte, die unterhalten und gleichzeitig das Gewöhnliche herausfordern sollen. Es geht nicht nur darum, dich zum Lachen zu bringen – es geht darum, dich zum Nachdenken anzuregen, zu lächeln und das Unerwartete zu genießen."
+    },
+    "jokesLanguagesSection": {
+      "title": "Witze aus verschiedenen Sprachen"
+    },
+    "cards": {
+      "unitedStates": {
+        "title": "Vereinigte Staaten",
+        "body": "Ein amerikanischer Adler am Grill? Ein Superheld, der auf einem Roller vorbeiflitzt? Ein winziges Pferd für einen winzigen Cowboy? Diese Szene hat mehr Ebenen als ein frittierter Twinkie. Was ist die Pointe in diesem Sternenbanner-Spektakel?"
+      },
+      "france": {
+        "title": "Frankreich",
+        "body": "Ein Baguette, das Eiffelturm-Selfies macht? Ein Mime, der in einer unsichtbaren Box gefangen ist, die sich tatsächlich bewegt? Eine Ente mit Barett, die über die Feinheiten des Käses quakt? Diese Szene ist so französisch, dass sie fast schon Croissants schwitzt."
+      },
+      "germany": {
+        "title": "Deutschland",
+        "body": "Bratwurst-betriebene Roboter, die um die pünktlichste Lieferung wetteifern? Ein Gartenzwerg, der eine Rebellion gegen Kitsch anführt? Ein Ingenieur, der versucht, Humor mit Präzision zu erklären? Diese Szene ist ordentlicher als ein frisch gemähter Rasen am Sonntagmorgen."
+      }
+    },
+    "typesOfJokesSection": {
+      "title": "Arten von Witzen"
+    },
+    "leadInSubMain": {
+      "classicJokes": {
+        "heading": "Klassische Witze",
+        "paragraph": "Genieße eine Sammlung zeitloser Witze! Dies sind die bewährten Klassiker, die seit Generationen geteilt und belacht werden, oft mit vertrauten Anfängen und zufriedenstellenden Pointen."
+      },
+      "surrealAbsurdity": {
+        "heading": "Surreale Absurdität",
+        "paragraph": "Tritt ein in das Bizarre und Unlogische! Diese Witze umarmen das Unerwartete und Unsinnige, wobei der Humor aus der reizvollen Verletzung der Realität und der schieren Absurdität der Situation entsteht."
+      },
+      "dadJokes": {
+        "heading": "Papa-Witze",
+        "paragraph": "Mach dich bereit für die typische Mischung aus Kitsch und Wortspielen! Diese Papa-Witze haben etwas längere Anfänge, die die Vorfreude auf die unvermeidlich peinliche (aber manchmal charmante) Pointe steigern. Du wurdest gewarnt!"
+      }
+    },
+    "adviseSection": {
+      "mainText": {
+        "line1": "Erzähl uns einen Witz, um teilzunehmen.",
+        "line2": "Bring uns zum Lachen, oder versuch es zumindest."
+      },
+      "actionButton": {
+        "text": "Registrieren"
+      }
+    }
+  },
+  "ErrorPage": {
+    "content": {
+      "title": "Fehlerseite",
+      "message": "Ein Fehler ist aufgetreten!"
+    }
+  },
+  "ComedianSignUpForm": {
+    "introduction": {
+      "heading": "Fordere dein Rampenlicht ein",
+      "paragraph": "Lass diese Pointen nicht ungehört verhallen. Melde dich jetzt an, um dein Komikerprofil zu erstellen, dein bestes Material zu teilen und dich mit einer Community zu verbinden, die gerne lacht."
+    },
+    "fields": {
+      "namePlaceholder": "Wähle einen Komikernamen",
+      "nameLabel": "Komikername",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Komiker-E-Mail",
+      "jokeLabel": "Komikerwitz",
+      "jokePlaceholder": "Gib deinen Witz ein"
+    },
+    "actions": {
+      "submitButton": "Mach mit"
+    }
+  },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Wähle deine globale Bühne!",
+      "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
+    },
+    "searchControls": {
+      "inputPlaceholder": "Suche dein Land...",
+      "continueButtonLabel": "Weiter mit \"SelectCountry\""
+    },
+    "countryNames": {
+      "US": "Vereinigte Staaten",
+      "FR": "Frankreich",
+      "DE": "Deutschland"
+    }
+  },
+  "ComedianLoginForm": {
+    "introduction": {
+      "heading": "Legende kehrt zurück? Melde dich an, um das Mikrofon zu behalten",
+      "paragraph": "Ein von Satire angetriebener Spielplatz, der kulturellen Witz und kreative Rebellion vermischt – entdecke die Geschichte, die Mission und warum Lachen härter trifft, wenn es ehrlich ist."
+    },
+    "fields": {
+      "namePlaceholder": "Wähle einen Komikernamen",
+      "nameLabel": "Komikername",
+      "emailPlaceholder": "email@janesfakedomain.net",
+      "emailLabel": "Komiker-E-Mail"
+    },
+    "actions": {
+      "submitButton": "Tritt dem Humor bei"
+    }
+  },
+  "HeaderNavigation": {
+    "navItems": {
+      "home": "Startseite",
+      "signUp": "Registrieren",
+      "logIn": "Anmelden"
+    }
+  }
+}

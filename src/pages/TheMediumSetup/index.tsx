@@ -13,7 +13,7 @@ function TheMediumSetupPage() {
   const navigation = useNavigate();
 
   const handleRedirection = () => {
-    navigation("sign-up")
+    navigation("sign-up");
   };
 
   return (
@@ -34,13 +34,13 @@ function TheMediumSetupPage() {
         />
         <Card
           img={colombiaImg}
-          title={t("MediumSetup.cards.colombia.title")}
-          body={t("MediumSetup.cards.colombia.body")}
+          title={t("MediumSetup.cards.germany.title")}
+          body={t("MediumSetup.cards.germany.body")}
         />
         <Card
           img={portugalImg}
-          title={t("MediumSetup.cards.portugal.title")}
-          body={t("MediumSetup.cards.portugal.body")}
+          title={t("MediumSetup.cards.france.title")}
+          body={t("MediumSetup.cards.france.body")}
         />
       </section>
       <h3>{t("MediumSetup.typesOfJokesSection.title")}</h3>

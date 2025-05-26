@@ -1,0 +1,44 @@
+@use "@styles/__theme";
+
+.error {
+  @include _theme.flex(column, center, center);
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: _theme.$third-bg-color;
+
+  &__container {
+    @include _theme.flex(column, center, center);
+    @include _theme.styled-border;
+    max-width: 50rem;
+    width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  &__icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: _theme.$secondary-bg-color;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+
+  &__message {
+    font-size: 1.125rem;
+    color: #666666;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  &__actions {
+    @include _theme.flex(row, center, center);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

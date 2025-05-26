@@ -1,13 +1,54 @@
-import type { Country } from "@/types/CountryTypes";
+import type { Country } from "@/types/CountryType";
+import { LuCrown, LuUsers, LuMail } from "react-icons/lu";
 import type { InformationListData } from "@/types/UnorderedListImpl";
 
 export const DEFAULT_LANG = "en";
-export const SUPPORTED_LANGS = ["es", "pt"];
+export const DEFAULT_LOCAL = "US";
+export const SUPPORTED_LANGS = ["fr", "de"];
 
-export const countries: Country[] = [
-  { code: "US", name: "USA", flag: "🇺🇸" },
-  { code: "PT", name: "Portugal", flag: "🇵🇹" },
-  { code: "CO", name: "Colombia", flag: "🇨🇴" },
+export const locales: Country[] = [
+  { code: "FR", name: "France", flag: "🇫🇷" },
+  { code: "DE", name: "Germany", flag: "🇩🇪" },
+  { code: "US", name: "United States", flag: "🇺🇸" },
+];
+
+export const platformSections = [
+  {
+    title: "Communication Hub",
+    icon: LuMail,
+    description: "Stay connected with your joke community",
+    features: [
+      "Daily joke newsletters",
+      "Community notifications",
+      "Personalized recommendations",
+      "Weekly humor digest",
+    ],
+    badge: "Essential",
+  },
+  {
+    title: "Social Features",
+    icon: LuUsers,
+    description: "Connect and share with fellow joke enthusiasts",
+    features: [
+      "Share favorite jokes",
+      "Follow other users",
+      "Create joke collections",
+      "Community discussions",
+    ],
+    badge: "Interactive",
+  },
+  {
+    title: "Premium Experience",
+    icon: LuCrown,
+    description: "Unlock advanced features and exclusive content",
+    features: [
+      "Unlimited joke access",
+      "Advanced filtering",
+      "Premium categories",
+      "Ad-free experience",
+    ],
+    badge: "Exclusive",
+  },
 ];
 
 export const informationListEN: InformationListData = [
@@ -37,56 +78,58 @@ export const informationListEN: InformationListData = [
   },
 ];
 
-export const informationListPT: InformationListData = [
+export const informationListFR: InformationListData = [
   {
-    title: "Conceitos Principais",
+    title: "Concepts Clés",
     topics: [
-      { subtitle: "O que é Bite of Humor?", link: "/pt/core/what-is" },
-      { subtitle: "Por Trás do Nome", link: "/pt/core/name-origin" },
-      { subtitle: "Filosofia do Logotipo", link: "/pt/core/logo-philosophy" },
+      { subtitle: "Qu'est-ce que Bite of Humor ?", link: "/fr/core/what-is" },
+      { subtitle: "Derrière le Nom", link: "/fr/core/name-origin" },
+      { subtitle: "Philosophie du Logo", link: "/fr/core/logo-philosophy" },
     ],
   },
   {
-    title: "Sobre o Projeto",
+    title: "À Propos du Projet",
     topics: [
-      { subtitle: "Visão Geral do Projeto", link: "/pt/about/overview" },
-      { subtitle: "Objetivos de Design", link: "/pt/about/goals" },
-      { subtitle: "Direção Criativa", link: "/pt/about/creative-direction" },
+      { subtitle: "Aperçu du Projet", link: "/fr/about/overview" },
+      { subtitle: "Objectifs de Conception", link: "/fr/about/goals" },
+      { subtitle: "Direction Créative", link: "/fr/about/creative-direction" },
     ],
   },
   {
-    title: "Comunidade",
+    title: "Communauté",
     topics: [
-      { subtitle: "Fórum de Feedback", link: "/pt/community/forum" },
-      { subtitle: "Enviar uma Piada", link: "/pt/community/submit-joke" },
-      { subtitle: "Desafios de Design", link: "/pt/community/challenges" },
+      { subtitle: "Forum de Discussion", link: "/fr/community/forum" },
+      { subtitle: "Proposer une Blague", link: "/fr/community/submit-joke" },
+      { subtitle: "Défis de Conception", link: "/fr/community/challenges" },
     ],
   },
 ];
-
-export const informationListES: InformationListData = [
+export const informationListDE: InformationListData = [
   {
-    title: "Conceptos Clave",
+    title: "Kernkonzepte",
     topics: [
-      { subtitle: "¿Qué es Bite of Humor?", link: "/es/core/what-is" },
-      { subtitle: "Detrás del Nombre", link: "/es/core/name-origin" },
-      { subtitle: "Filosofía del Logo", link: "/es/core/logo-philosophy" },
+      { subtitle: "Was ist Bite of Humor?", link: "/de/core/what-is" },
+      { subtitle: "Hinter dem Namen", link: "/de/core/name-origin" },
+      { subtitle: "Logo-Philosophie", link: "/de/core/logo-philosophy" },
     ],
   },
   {
-    title: "Sobre el Proyecto",
+    title: "Über das Projekt",
     topics: [
-      { subtitle: "Resumen del Proyecto", link: "/es/about/overview" },
-      { subtitle: "Objetivos de Diseño", link: "/es/about/goals" },
-      { subtitle: "Dirección Creativa", link: "/es/about/creative-direction" },
+      { subtitle: "Projektübersicht", link: "/de/about/overview" },
+      { subtitle: "Designziele", link: "/de/about/goals" },
+      { subtitle: "Kreative Leitung", link: "/de/about/creative-direction" },
     ],
   },
   {
-    title: "Comunidad",
+    title: "Community",
     topics: [
-      { subtitle: "Foro de Comentarios", link: "/es/community/forum" },
-      { subtitle: "Enviar un Chiste", link: "/es/community/submit-joke" },
-      { subtitle: "Desafíos de Diseño", link: "/es/community/challenges" },
+      { subtitle: "Feedback-Forum", link: "/de/community/forum" },
+      { subtitle: "Witz einreichen", link: "/de/community/submit-joke" },
+      {
+        subtitle: "Design-Herausforderungen",
+        link: "/de/community/challenges",
+      },
     ],
   },
 ];

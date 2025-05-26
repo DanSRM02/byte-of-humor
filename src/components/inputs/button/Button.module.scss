@@ -17,7 +17,6 @@
     &:hover,
     &:active {
       text-decoration: underline;
-      
     }
   }
   &-secondary {
@@ -31,6 +30,16 @@
       color: _theme.$primary-bg-color;
     }
   }
+  &-outline {
+    @extend .button;
+    background-color: _theme.$primary-bg-color;
+    border: 1px solid rgba(0, 0, 0, 0.327);
+
+    &:hover,
+    &:active {
+      background-color: _theme.$third-bg-color;      
+    }
+  }
 }
 
 .size {
@@ -41,6 +50,6 @@
     padding: 1rem 1.5rem;
   }
   &-large {
-    padding: 1.25rem 2rem;
+    padding: 1.25rem 5rem;
   }
 }

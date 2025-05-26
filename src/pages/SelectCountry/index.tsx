@@ -1,25 +1,24 @@
 import LeadIn from "@/components/dataDisplay/LeadIn";
 import classes from "./SelectCountry.module.scss";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Button from "@/components/inputs/Button";
-import { countries } from "@/utils/const";
-import { useNavigate } from "react-router-dom";
+import { locales } from "@/utils/const";
+import { useNavigate, useOutletContext, useLocation } from "react-router-dom";
+import type { OutletCtxType } from "@/types/OutletType";
 
 function SelectCountry() {
-  const { t, i18n } = useTranslation();
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { language } = useOutletContext<OutletCtxType>();
 
   const handleClick = (code: string) => {
-    setSelectedCountry(code);
+    const newLangParam = `${language}-${code}`;
+    const currentPath = location.pathname.split("/");
+    currentPath[1] = newLangParam;
+    const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
+    navigate(pathToRedirect);
   };
-
-  useEffect(() => {
-    if (selectedCountry && selectedCountry !== "") {
-      navigate(`/${i18n.language}-${selectedCountry}/setup/final`);
-    }
-  }, [selectedCountry]);
 
   return (
     <>
@@ -31,14 +30,14 @@ function SelectCountry() {
           />
         </aside>
         <article className={classes["select-country__article"]}>
-          {countries.map((country, index) => (
+          {locales.map((country, index) => (
             <Button
               key={`${index}${country.code}`}
-              variant="secondary"
+              variant="primary"
               size="medium"
               onClick={() => handleClick(country.code)}
             >
-              {country.name}
+              {t(`SelectCountry.countryNames.${country.code}`)}
             </Button>
           ))}
         </article>

@@ -1,11 +1,12 @@
 @use "@styles/__theme";
 
 .sign-up {
-  background-color: _theme.$third-bg-color;
+  @include _theme.flex(null, center, center);
+  @include _theme.styled-border;
+  flex-wrap: wrap;
   padding: 3rem;
-  border-radius: 16px;
+  gap: 5rem;
   min-height: 37rem;
-  @include _theme.flex(null, center);
 
   &__form {
     @include _theme.flex(column);

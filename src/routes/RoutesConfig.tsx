@@ -18,6 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/:lang",
+    errorElement: <ErrorPage />,
     element: <LanguageWrapper />,
     children: [
       {

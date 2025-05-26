@@ -30,13 +30,13 @@
         "title": "United States",
         "body": "An American eagle on grill duty? A superhero zipping by on a scooter? A tiny horse for a tiny cowboy? This scene's got more layers than a deep-fried Twinkie. What's the punchline in this stars-and-stripes spectacle?"
       },
-      "colombia": {
-        "title": "Colombia",
-        "body": "Survival of the quickest in Bogotá! As Transmilenio commuters make a mad dash, a man clutches his empanada like a prize. Street vendors hawk humor amidst the urban chaos, under the watchful eye of a weary guard."
+      "france": {
+        "title": "France",
+        "body": "A baguette taking Eiffel Tower selfies? A mime trapped in an invisible box that's actually moving? A duck in a beret quacking about the intricacies of cheese? This scene is so French, it's practically sweating croissants."
       },
-      "portugal": {
-        "title": "Portugal",
-        "body": "Cobblestone streets, a determined grandma, a basket of bread, and a surprisingly speedy fish! This Portuguese pursuit is as charming as a Lisbon tram. What's the catch in this bizarre race?"
+      "germany": {
+        "title": "Germany",
+        "body": "Bratwurst-powered robots competing for the most punctual delivery? A garden gnome leading a rebellion against kitsch? An engineer trying to explain humor with precision? This scene is more orderly than a freshly mown lawn on a Sunday morning."
       }
     },
     "typesOfJokesSection": {
@@ -69,7 +69,7 @@
   "ErrorPage": {
     "content": {
       "title": "Error Page",
-      "message": "An error occured!"
+      "message": "An error occurred!"
     }
   },
   "ComedianSignUpForm": {
@@ -114,9 +114,9 @@
       "continueButtonLabel": "Continue with \"SelectCountry\""
     },
     "countryNames": {
-      "unitedStates": "United States",
-      "portugal": "Portugal",
-      "colombia": "Colombia"
+      "US": "United States",
+      "FR": "France",
+      "DE": "Germany"
     }
   },
   "HeaderNavigation": {

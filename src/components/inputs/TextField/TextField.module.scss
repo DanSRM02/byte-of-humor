@@ -8,9 +8,11 @@
 
   > input {
     font-family: "Inter", sans-serif;
+    border: 1px solid _theme.$secondary-bg-color;
   }
 
   > textarea {
+    border: 1px solid _theme.$secondary-bg-color;
     font-family: "Inter", sans-serif;
     max-width: 100%;
     max-height: min-content;

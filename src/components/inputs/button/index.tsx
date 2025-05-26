@@ -1,6 +1,6 @@
 import type { ReactNode, Ref } from "react";
 import classes from "./Button.module.scss";
-import type { ColorTypes } from "@/types/ColorTypes";
+import type { ColorTypes } from "@/types/ColorType";
 
 type ButtonProps = {
   variant: ColorTypes | string;

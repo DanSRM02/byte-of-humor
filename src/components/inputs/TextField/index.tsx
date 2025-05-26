@@ -1,4 +1,4 @@
-import type { ColorTypes } from "@/types/ColorTypes";
+import type { ColorTypes } from "@/types/ColorType";
 import type { ReactNode } from "react";
 import classes from "./TextField.module.scss";
 
@@ -6,6 +6,8 @@ type TextFieldProps = {
   color: ColorTypes | string;
 
   placeholder: string;
+
+  id: string;
   children?: ReactNode;
   type?: string;
   label?: string;
@@ -21,6 +23,8 @@ const TextField = ({
   color,
   disabled = false,
   error = false,
+
+  id,
   placeholder,
   select = false,
   required = false,
@@ -32,13 +36,13 @@ const TextField = ({
   children,
   ...props
 }: TextFieldProps) => {
-  const formatLabel = label?.split(" ").join("-").toLowerCase();
   const inputColorStyle = classes[`input-${color}`];
   let inputType = (
     <>
       <input
         className={inputColorStyle}
-        id={formatLabel}
+        name={id}
+        id={id}
         type={type}
         placeholder={placeholder}
         readOnly={disabled}
@@ -53,8 +57,8 @@ const TextField = ({
       <>
         <textarea
           className={inputColorStyle}
-          name={formatLabel}
-          id={formatLabel}
+          name={id}
+          id={id}
           rows={rows}
           cols={cols}
           placeholder={placeholder}
@@ -70,7 +74,7 @@ const TextField = ({
   return (
     <div className={classes["text-field"]}>
       {label && (
-        <label className={classes["text-field__label"]} htmlFor={formatLabel}>
+        <label className={classes["text-field__label"]} htmlFor={id}>
           {label}
         </label>
       )}
