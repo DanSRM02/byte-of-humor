@@ -23,7 +23,10 @@ function TheFinalSetupPage() {
         break;
       case "configuration":
         navigate(`/${localizationRouter}/setup/configuration`);
-        break;
+        break;    
+      case "premiumExperience":
+        navigate(`/${localizationRouter}/setup/premium`);
+        break
       default:
         break;
     }
@@ -46,22 +49,23 @@ function TheFinalSetupPage() {
         >
           {platformSections.map((card) => (
             <Card
-              key={card.featureTitle}
+              key={card.title}
               title={t(
-                `TheFinalSetupPage.platformCards.${card.featureTitle}.title`
+                `TheFinalSetupPage.platformCards.${card.title}.title`
               )}
               body={t(
-                `TheFinalSetupPage.platformCards.${card.featureTitle}.description`
+                `TheFinalSetupPage.platformCards.${card.title}.description`
               )}
-              icon={<card.icon aria-label={card.featureTitle + " icon"} />}
+              icon={card.icon ? <card.icon aria-label={card.title + " icon"} /> : null}
               badge={t(
-                `TheFinalSetupPage.platformCards.${card.featureTitle}.badge`
+                `TheFinalSetupPage.platformCards.${card.title}.badge`
               )}
-              features={card.features.map((featureKey) =>
+              features={card.features?.map((featureKey) =>
                 t(
-                  `TheFinalSetupPage.platformCards.${card.featureTitle}.features.${featureKey}`
+                  `TheFinalSetupPage.platformCards.${card.title}.features.${featureKey}`
                 )
               )}
+              onExplore={() => handleRedirect(card.title)}
               variant="expandable"
             />
           ))}

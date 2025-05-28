@@ -1,6 +1,6 @@
 import type { OutletCtxImpl } from "@/types/OutletImpl";
 import { DEFAULT_LANG, DEFAULT_LOCAL, SUPPORTED_LANGS } from "@/utils/const";
-import { locales } from "@/utils/textConst";
+import { countries } from "@/utils/textConst";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ const   LanguageWrapper = () => {
       SUPPORTED_LANGS.find((supportedLang) => supportedLang === language) ??
       DEFAULT_LANG;
 
-    const validatedLocaleObject = locales.find(
+    const validatedLocaleObject = countries.find(
       (country) => country.code === locale
     );
 
@@ -44,7 +44,7 @@ const   LanguageWrapper = () => {
     const correctUrlLang = languageConfig.localizationRouter;
     const currentPath = location.pathname;
     if (lang !== correctUrlLang) {
-      const pathSegmenths = currentPath.split("/").filter((p) => p);
+      const pathSegmenths = currentPath.split("/").filter((space) => space);
       const correctPath = `/${correctUrlLang}/${pathSegmenths
         .slice(1)
         .join("/")}`;

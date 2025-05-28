@@ -3,3 +3,8 @@ export interface Country {
   name: string;
   flag: string;
 }
+
+export interface Locale {
+  language: string;
+  currency: string;
+}

@@ -109,14 +109,61 @@
       "heading": "Choose Your Global Stage!",
       "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
     },
-    "searchControls": {
+    "searchCountryControls": {
       "selectLabel": "Search Your Country...",
-      "selectPlaceholder": "Continue with your selection"
+      "selectPlaceholder": "Continue with your Country"
+    },
+    "searchLanguageControls": {
+      "selectLabel": "Search Your Language...",
+      "selectPlaceholder": "Continue with your Language"
+    },
+    "languageNames": {
+      "fr": "French",
+      "de": "German",
+      "en": "English"
     },
     "countryNames": {
       "US": "United States",
       "FR": "France",
       "DE": "Germany"
+    }
+  },
+  "plans": {
+    "basic": {
+      "name": "Basic",
+      "description": "A starter plan for casual joke lovers. Enjoy a limited selection of jokes and standard features.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Access to 100 jokes",
+        "feature2": "SD streaming",
+        "feature3": "1 device",
+        "feature4": "Standard support",
+        "feature5": "No exclusive content"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "For dedicated humor fans. Unlock more jokes, better streaming, and exclusive content.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Access to 1000 jokes",
+        "feature2": "HD streaming",
+        "feature3": "3 devices",
+        "feature4": "Priority support",
+        "feature5": "Exclusive content"
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "The ultimate experience for comedy connoisseurs. Unlimited jokes, top-tier streaming, and all extras.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Unlimited joke access",
+        "feature2": "4K streaming",
+        "feature3": "5 devices",
+        "feature4": "Premium support",
+        "feature5": "Exclusive and bonus content"
+      }
     }
   },
   "HeaderNavigation": {

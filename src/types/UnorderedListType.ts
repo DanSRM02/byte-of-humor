@@ -1,3 +1,5 @@
+import type { ElementType } from "react";
+
 export type UnorderedListTopic = {
   subtitle: string;
   link: string;
@@ -5,7 +7,9 @@ export type UnorderedListTopic = {
 
 export type UnorderedListImpl = {
   title: string;
-  topics: UnorderedListTopic[];
+  icon?: ElementType;
+  price?: number;
+  features?: string[];
+  popular?: boolean;
+  topics?: UnorderedListTopic[];
 };
-
-export type InformationListData = UnorderedListImpl[];

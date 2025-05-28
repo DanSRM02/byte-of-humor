@@ -1,32 +1,54 @@
 import type { Country } from "@/types/CountryImpl";
-import type { InformationListData } from "@/types/UnorderedListType";
-import { LuCrown, LuUsers, LuMail } from "react-icons/lu";
+import type { UnorderedListImpl } from "@/types/UnorderedListType";
+import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 
-export const locales: Country[] = [
+export const countries: Country[] = [
   { code: "FR", name: "France", flag: "🇫🇷" },
   { code: "DE", name: "Germany", flag: "🇩🇪" },
   { code: "US", name: "United States", flag: "🇺🇸" },
 ];
 
-export const platformSections = [
+export const plans: UnorderedListImpl[] = [
   {
-    featureTitle: "communicationHub",
+    title: "basic",
+    icon: LuCircle,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 0,
+  },
+  {
+    title: "pro",
+    icon: LuStar,
+    popular: true,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 9.99,
+  },
+  {
+    title: "premium",
+    icon: LuCrown,
+    features: ["feature1", "feature2", "feature3", "feature4"],
+    price: 19.99,
+  },
+];
+
+export const platformSections: UnorderedListImpl[] = [
+  {
+    title: "communicationHub",
     icon: LuMail,
     features: ["feature1", "feature2", "feature3", "feature4"],
   },
   {
-    featureTitle: "socialFeatures",
+    title: "socialFeatures",
     icon: LuUsers,
     features: ["feature1", "feature2", "feature3", "feature4"],
   },
   {
-    featureTitle: "premiumExperience",
+    title: "premiumExperience",
     icon: LuCrown,
     features: ["feature1", "feature2", "feature3", "feature4"],
   },
 ];
 
-export const informationListEN: InformationListData = [
+export const informationListEN: UnorderedListImpl[] = [
   {
     title: "Core Concepts",
     topics: [
@@ -53,7 +75,7 @@ export const informationListEN: InformationListData = [
   },
 ];
 
-export const informationListFR: InformationListData = [
+export const informationListFR: UnorderedListImpl[] = [
   {
     title: "Concepts Clés",
     topics: [
@@ -80,7 +102,7 @@ export const informationListFR: InformationListData = [
   },
 ];
 
-export const informationListDE: InformationListData = [
+export const informationListDE: UnorderedListImpl[] = [
   {
     title: "Kernkonzepte",
     topics: [

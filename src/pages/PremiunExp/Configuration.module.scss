@@ -1,0 +1,8 @@
+.plans {
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
+    margin: 2rem;
+    gap: 1rem;
+  }
+}

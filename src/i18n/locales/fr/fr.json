@@ -109,9 +109,18 @@
       "heading": "Choisissez Votre Scène Mondiale !",
       "paragraph": "Bite of Humor vous connecte avec la comédie de tous les coins du monde. Dites-nous où vous voulez commencer votre voyage humoristique."
     },
-    "searchControls": {
+    "searchCountryControls": {
       "selectLabel": "Recherchez votre pays...",
-      "selectPlaceholder": "Continuer votre sélection"
+      "selectPlaceholder": "Continuez avec votre pays"
+    },
+    "searchLanguageControls": {
+      "selectLabel": "Recherchez votre langue...",
+      "selectPlaceholder": "Continuez avec votre langue"
+    },
+    "languageNames": {
+      "fr": "Français",
+      "de": "Allemand",
+      "en": "Anglais"
     },
     "countryNames": {
       "US": "États-Unis",
@@ -124,6 +133,44 @@
       "home": "Accueil",
       "signUp": "S'inscrire",
       "logIn": "Se connecter"
+    }
+  },
+  "plans": {
+    "basic": {
+      "name": "Basique",
+      "description": "Un plan d'entrée pour profiter de l'humour avec des fonctionnalités essentielles.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Accès à 100 blagues",
+        "feature2": "Streaming SD",
+        "feature3": "1 appareil",
+        "feature4": "Support standard",
+        "feature5": "Pas de contenu exclusif"
+      }
+    },
+    "pro": {
+      "name": "Pro",
+      "description": "Un plan avancé pour ceux qui veulent plus de blagues et de flexibilité.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Accès à 1000 blagues",
+        "feature2": "Streaming HD",
+        "feature3": "3 appareils",
+        "feature4": "Support prioritaire",
+        "feature5": "Contenu exclusif"
+      }
+    },
+    "premium": {
+      "name": "Premium",
+      "description": "L'expérience ultime avec un accès illimité et des avantages exclusifs.",
+      "price": "{{value, currency}}",
+      "features": {
+        "feature1": "Accès illimité aux blagues",
+        "feature2": "Streaming 4K",
+        "feature3": "5 appareils",
+        "feature4": "Support premium",
+        "feature5": "Contenu exclusif et bonus"
+      }
     }
   },
   "TheFinalSetupPage": {

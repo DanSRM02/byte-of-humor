@@ -6,8 +6,8 @@
     @include theme.styled-border;
   }
   &__header-filter{
-    display: flex;
-    gap: 1rem;
+    @include theme.flex(null, null, start);    
+    gap: 1.5rem;
   }
   &__menu {
     display: grid;

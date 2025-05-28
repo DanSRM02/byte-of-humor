@@ -22,13 +22,9 @@ const UnorderedList = ({ items, children }: UnorderedListProps) => {
       >
         {children}
         {items &&
-          items.topics.map((item) => (
+          items.topics?.map((item) => (
             <li key={item.link} tabIndex={0}>
-              <Link
-                to={item.link}
-                aria-label={item.subtitle}
-                tabIndex={0}
-              >
+              <Link to={item.link} aria-label={item.subtitle} tabIndex={0}>
                 {item.subtitle}
               </Link>
             </li>

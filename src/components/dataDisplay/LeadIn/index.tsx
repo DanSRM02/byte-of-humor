@@ -10,7 +10,11 @@ const LeadIn = ({ heading, paragraph, variant = "primary" }: LeadInProps) => {
   switch (variant) {
     case "secondary":
       contentVariant = (
-        <article className={classes["lead-in"]} aria-label={heading} tabIndex={0}>
+        <article
+          className={classes["lead-in"]}
+          aria-label={heading}
+          tabIndex={0}
+        >
           <h5 className={classes["lead-in__heading"]}>{heading}</h5>
           <p className={classes["lead-in__paragraph"]}>{paragraph}</p>
         </article>
@@ -19,7 +23,11 @@ const LeadIn = ({ heading, paragraph, variant = "primary" }: LeadInProps) => {
 
     default:
       contentVariant = (
-        <article className={classes["lead-in"]} aria-label={heading} tabIndex={0}>
+        <article
+          className={classes["lead-in"]}
+          aria-label={heading}
+          tabIndex={0}
+        >
           <span>
             <h1 className={classes["lead-in__heading"]}>{heading}</h1>
             <p className={classes["lead-in__paragraph"]}>{paragraph}</p>
