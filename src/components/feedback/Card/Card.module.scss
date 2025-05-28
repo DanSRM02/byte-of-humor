@@ -1,8 +1,8 @@
-@use "@styles/__theme";
+@use "@styles/__theme" as theme;
 
 .card {
-  @include _theme.flex(column, flex-start, stretch);
-  background-color: _theme.$primary-bg-color;
+  @include theme.flex(column, flex-start, stretch);
+  background-color: theme.$primary-bg-color;
   border-radius: 1rem;
   padding: 2rem;
   border: 0.2rem solid transparent;
@@ -16,19 +16,24 @@
     margin-bottom: 1.5rem;
   }
 
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  &__main-content {
+    @include theme.flex(column, flex-start, stretch);
+  }
+
+  &__text-content {
+    @include theme.flex(column, flex-start, stretch);
+  }
+
+  &__icon-wrapper {
+    @include theme.flex(null, center, center);
   }
 
   &__icon {
-    @include _theme.flex(null, center, center);
-    background-color: _theme.$secondary-bg-color;
-    color: _theme.$primary-bg-color;
+    @include theme.flex(null, center, center);
+    background-color: theme.$secondary-bg-color;
+    color: theme.$primary-bg-color;
     padding: 1rem;
     border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
     width: fit-content;
 
     svg {
@@ -40,7 +45,7 @@
   &__title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: _theme.$secondary-bg-color;
+    color: theme.$secondary-bg-color;
     margin: 0 0 1rem 0;
     line-height: 1.3;
   }
@@ -54,8 +59,8 @@
 
   &__badge {
     display: inline-block;
-    background-color: _theme.$third-bg-color;
-    color: _theme.$secondary-bg-color;
+    background-color: theme.$third-bg-color;
+    color: theme.$secondary-bg-color;
     padding: 0.25rem 0.75rem;
     border-radius: 0.5rem;
     font-size: 0.75rem;
@@ -64,7 +69,10 @@
     width: fit-content;
   }
 
-  // Expandable variant styles
+  &__children-content {
+    margin-top: 1rem;
+  }
+
   &--expandable {
     cursor: pointer;
     border: 0.2rem solid #e5e5e5;
@@ -73,30 +81,33 @@
       border-color: #a3a3a3;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     }
+
+    .card__title {
+      margin: 0;
+    }
+    .card__badge {
+      margin: 0;
+    }
   }
 
   &--expanded {
-    border-color: _theme.$secondary-bg-color;
+    border-color: theme.$secondary-bg-color;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   }
 
   &__header {
-    @include _theme.flex(null, space-between, center);
+    @include theme.flex(null, space-between, center);
     margin-bottom: 1.5rem;
   }
 
   &__header-content {
-    @include _theme.flex(null, flex-start, center);
+    @include theme.flex(null, flex-start, center);
     gap: 1.5rem;
     flex: 1;
   }
 
-  &__icon-wrapper {
-    @include _theme.flex(null, center, center);
-  }
-
   &__header-text {
-    @include _theme.flex(column, flex-start, flex-start);
+    @include theme.flex(column, flex-start, flex-start);
     gap: 0.5rem;
   }
 
@@ -113,11 +124,11 @@
   }
 
   &__content {
-    @include _theme.flex(column, flex-start, stretch);
+    @include theme.flex(column, flex-start, stretch);
   }
 
   &__expanded-content {
-    @include _theme.flex(column, flex-start, stretch);
+    @include theme.flex(column, flex-start, stretch);
     gap: 1.5rem;
     margin-top: 1.5rem;
     animation: slideDown 0.3s ease-out;
@@ -130,12 +141,12 @@
   }
 
   &__features {
-    @include _theme.flex(column, flex-start, stretch);
+    @include theme.flex(column, flex-start, stretch);
     gap: 0.75rem;
   }
 
   &__feature {
-    @include _theme.flex(null, flex-start, center);
+    @include theme.flex(null, flex-start, center);
     gap: 0.75rem;
   }
 
@@ -149,13 +160,13 @@
 
   &__feature-text {
     font-size: 0.875rem;
-    color: _theme.$secondary-bg-color;
+    color: theme.$secondary-bg-color;
     line-height: 1.5;
   }
 
   &__explore-button {
     background-color: transparent;
-    color: _theme.$secondary-bg-color;
+    color: theme.$secondary-bg-color;
     border: 0.2rem solid #e5e5e5;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
@@ -166,27 +177,55 @@
     width: 100%;
 
     &:hover {
-      background-color: _theme.$third-bg-color;
+      background-color: theme.$third-bg-color;
       border-color: #a3a3a3;
     }
 
     &:focus {
-      outline: 0.2rem solid rgba(34, 34, 34, 0.3);
+      outline: 0.2rem solid rgba(theme.$secondary-bg-color, 0.3);
       outline-offset: 0.2rem;
     }
   }
 
-  // Expandable variant adjustments
-  &--expandable &__title {
-    margin: 0;
-  }
+  &--joke {
+    background-color: theme.$primary-bg-color;
+    border: 0.1rem solid theme.$default-border-color;
+    padding: 1.5rem;
 
-  &--expandable &__badge {
-    margin: 0;
-  }
+    .card__category-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: theme.$subtle-text-color;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-  &--expandable &__body {
-    margin-bottom: 0;
+    .card__body {
+      font-size: 1.05rem;
+      color: theme.$default-text-color;
+      margin-bottom: 0.75rem;
+    }
+
+    .card__joke-punchline {
+      font-weight: 500;
+    }
+
+    .card__badge {
+      margin-top: 1rem;
+      font-size: 0.7rem;
+    }
+
+    .card__joke-actions {
+      margin-top: 1rem;
+      @include theme.flex(row, flex-start, center);
+      gap: 0.5rem;
+    }
+
+    &:hover {
+      border-color: theme.$primary-accent-color;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.07);
+    }
   }
 }
 

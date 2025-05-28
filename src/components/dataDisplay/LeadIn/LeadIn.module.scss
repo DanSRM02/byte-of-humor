@@ -1,9 +1,9 @@
 @use "@styles/__theme";
 
 .lead-in {
-  @include _theme.flex(null, null, center);
+  @include _theme.flex(column, null, null);
   flex-wrap: wrap;
-  gap: 2.5rem;
+
   &__icon {
     background-color: _theme.$secondary-bg-color;
     padding: 1.5rem;

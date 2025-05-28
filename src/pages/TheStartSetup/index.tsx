@@ -43,16 +43,40 @@ function TheStartSetupPage() {
   }
 
   return (
-    <main className={classes["first-setup"]}>
-      <h1 className={classes["first-setup__heading"]}>Bite Of Humor</h1>
-      <section className={classes["first-setup__container"]}>
+    <main
+      className={classes["first-setup"]}
+      tabIndex={0}
+      aria-label="First setup main content"
+    >
+      <h1
+        className={classes["first-setup__heading"]}
+        tabIndex={0}
+        aria-label="Bite Of Humor heading"
+      >
+        Bite Of Humor
+      </h1>
+      <section
+        className={classes["first-setup__container"]}
+        tabIndex={0}
+        aria-label="Setup question and interaction"
+      >
         <article
           className={`${classes["first-setup__question"]} ${classes["question"]}`}
+          tabIndex={0}
+          aria-label="Setup introduction and description"
         >
-          <h2 className={classes["question__subtitle"]}>
+          <h2
+            className={classes["question__subtitle"]}
+            tabIndex={0}
+            aria-label={t("FirstSetup.introduction.title")}
+          >
             {t("FirstSetup.introduction.title")}
           </h2>
-          <h5 className={classes["question__remark"]}>
+          <h5
+            className={classes["question__remark"]}
+            tabIndex={0}
+            aria-label={t("FirstSetup.introduction.remark")}
+          >
             {t("FirstSetup.introduction.remark")}
           </h5>
           <p className={classes["question__paragraph"]}>
@@ -78,6 +102,10 @@ function TheStartSetupPage() {
             variant="primary"
             ref={buttonRef}
             onClick={handleClick}
+            aria-label={
+              message || t("FirstSetup.actions.buttonMessages.message1")
+            }
+            tabIndex={0}
           >
             {message}
           </Button>

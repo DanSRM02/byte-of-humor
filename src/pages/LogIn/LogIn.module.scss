@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   padding: 3rem;
   min-height: 35rem;
-  gap: 10rem;
+  gap: 2rem;
 
   &__form {
     @include _theme.flex(column);

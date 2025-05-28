@@ -18,15 +18,15 @@ function TheMediumSetupPage() {
 
   return (
     <>
-      <section className={classes["lead-in__main"]}>
+      <section className={classes["lead-in__main"]} aria-label="Introduction section" tabIndex={0}>
         <LeadIn
           heading={t("MediumSetup.leadInMain.heading")}
           paragraph={t("MediumSetup.leadInMain.paragraph")}
         />
-        <img src={logoBoH} />
+        <img src={logoBoH} alt={t("MediumSetup.leadInMain.logoAlt", "Byte of Humor logo")}/>
       </section>
-      <h3>{t("MediumSetup.jokesLanguagesSection.title")}</h3>
-      <section className={classes["card-content"]}>
+      <h3 tabIndex={0}>{t("MediumSetup.jokesLanguagesSection.title")}</h3>
+      <section className={classes["card-content"]} aria-label="Joke languages cards" tabIndex={0}>
         <Card
           img={unitedStateImg}
           title={t("MediumSetup.cards.unitedStates.title")}
@@ -43,8 +43,8 @@ function TheMediumSetupPage() {
           body={t("MediumSetup.cards.france.body")}
         />
       </section>
-      <h3>{t("MediumSetup.typesOfJokesSection.title")}</h3>
-      <section className={classes["lead-in__sub-main"]}>
+      <h3 tabIndex={0}>{t("MediumSetup.typesOfJokesSection.title")}</h3>
+      <section className={classes["lead-in__sub-main"]} aria-label="Types of jokes" tabIndex={0}>
         <LeadIn
           heading={t("MediumSetup.leadInSubMain.classicJokes.heading")}
           paragraph={t("MediumSetup.leadInSubMain.classicJokes.paragraph")}
@@ -61,15 +61,21 @@ function TheMediumSetupPage() {
           variant="secondary"
         />
       </section>
-      <section className={classes["advise"]}>
+      <section className={classes["advise"]} aria-label="Advice and action" tabIndex={0}>
         <span className={classes["advise__heading"]}>
-          <h2>
+          <h2 tabIndex={0}>
             {t("MediumSetup.adviseSection.mainText.line1")}
             <br />
             {t("MediumSetup.adviseSection.mainText.line2")}
           </h2>
         </span>
-        <Button onClick={handleRedirection} variant="secondary" size="large">
+        <Button 
+          onClick={handleRedirection} 
+          variant="secondary" 
+          size="large" 
+          aria-label={t("MediumSetup.adviseSection.actionButton.text")}
+          tabIndex={0}
+        >
           {t("MediumSetup.adviseSection.actionButton.text")}
         </Button>
       </section>

@@ -3,6 +3,16 @@ $primary-bg-color: #ffffff !default;
 $secondary-bg-color: #222222 !default;
 $third-bg-color: #f0f0f0 !default;
 
+$primary-accent-color: #26323f !default;
+$primary-accent-contrast-text: #ffffff !default;
+
+$chip-secondary-bg-color: #e9ecef !default;
+$chip-secondary-text-color: #495057 !default;
+$chip-secondary-border-color: #ced4da !default;
+$default-text-color: #212529 !default;
+$subtle-text-color: #6c757d !default;
+$default-border-color: #dee2e6 !default;
+
 @mixin styled-border {
   border-radius: 2rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);

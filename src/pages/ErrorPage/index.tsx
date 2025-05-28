@@ -12,17 +12,29 @@ function ErrorPage() {
   };
   return (
     <>
-      <main className={classes["error"]}>
-        <div className={classes["error__container"]}>
-          <div className={classes["error__icon"]}>⚠️</div>
-          <h2 className={classes["error__title"]}>
+      <main className={classes["error"]} aria-label="Error page" tabIndex={0}>
+        <div
+          className={classes["error__container"]}
+          aria-label="Error message container"
+          tabIndex={0}
+        >
+          <div className={classes["error__icon"]} aria-hidden="true">
+            ⚠️
+          </div>
+          <h2 className={classes["error__title"]} tabIndex={0}>
             {t("ErrorPage.content.title")}
           </h2>
-          <p className={classes["error__message"]}>
+          <p className={classes["error__message"]} tabIndex={0}>
             {t("ErrorPage.content.message")}
           </p>
           <div className={classes["error__actions"]}>
-            <Button variant="primary" size="medium" onClick={handleRedirect}>
+            <Button
+              variant="primary"
+              size="medium"
+              onClick={handleRedirect}
+              aria-label={t("ErrorPage.actions.goBack", "Go Back")}
+              tabIndex={0}
+            >
               {t("ErrorPage.actions.goBack", "Go Back")}
             </Button>
           </div>

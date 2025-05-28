@@ -89,21 +89,6 @@
       "submitButton": "Rejoignez-nous"
     }
   },
-  "SelectCountry": {
-    "introduction": {
-      "heading": "Choisissez Votre Scène Mondiale !",
-      "paragraph": "Bite of Humor vous connecte avec la comédie de tous les coins du monde. Dites-nous où vous voulez commencer votre voyage humoristique."
-    },
-    "searchControls": {
-      "inputPlaceholder": "Recherchez votre pays...",
-      "continueButtonLabel": "Continuer avec \"SelectCountry\""
-    },
-    "countryNames": {
-      "US": "États-Unis",
-      "FR": "France",
-      "DE": "Allemagne"
-    }
-  },
   "ComedianLoginForm": {
     "introduction": {
       "heading": "Une légende de retour ? Connectez-vous pour garder le micro",
@@ -119,11 +104,90 @@
       "submitButton": "Entrez dans l'Humour"
     }
   },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Choisissez Votre Scène Mondiale !",
+      "paragraph": "Bite of Humor vous connecte avec la comédie de tous les coins du monde. Dites-nous où vous voulez commencer votre voyage humoristique."
+    },
+    "searchControls": {
+      "selectLabel": "Recherchez votre pays...",
+      "selectPlaceholder": "Continuer votre sélection"
+    },
+    "countryNames": {
+      "US": "États-Unis",
+      "FR": "France",
+      "DE": "Allemagne"
+    }
+  },
   "HeaderNavigation": {
     "navItems": {
       "home": "Accueil",
       "signUp": "S'inscrire",
       "logIn": "Se connecter"
     }
+  },
+  "TheFinalSetupPage": {
+    "leadIn": {
+      "heading": "Bienvenue chez Bite of Humor",
+      "paragraph": "Votre configuration est terminée ! Explorez les différentes sections de votre expérience humoristique personnalisée."
+    },
+    "platformCards": {
+      "communicationHub": {
+        "title": "Centre de Communication",
+        "description": "Restez connecté avec votre communauté de blagues",
+        "features": {
+          "feature1": "Newsletters de blagues quotidiennes",
+          "feature2": "Notifications de la communauté",
+          "feature3": "Recommandations personnalisées",
+          "feature4": "Résumé hebdomadaire de l'humour"
+        },
+        "badge": "Essentiel"
+      },
+      "socialFeatures": {
+        "title": "Fonctionnalités Sociales",
+        "description": "Connectez-vous et partagez avec d'autres passionnés de blagues",
+        "features": {
+          "feature1": "Partager les blagues préférées",
+          "feature2": "Suivre d'autres utilisateurs",
+          "feature3": "Créer des collections de blagues",
+          "feature4": "Discussions communautaires"
+        },
+        "badge": "Interactif"
+      },
+      "premiumExperience": {
+        "title": "Expérience Premium",
+        "description": "Débloquez des fonctionnalités avancées et du contenu exclusif",
+        "features": {
+          "feature1": "Accès illimité aux blagues",
+          "feature2": "Filtrage avancé",
+          "feature3": "Catégories premium",
+          "feature4": "Expérience sans publicité"
+        },
+        "badge": "Exclusif"
+      }
+    },
+    "dashboardCard": {
+      "title": "Tableau de Bord d'Accès Rapide",
+      "body": "Accédez directement à vos fonctionnalités de plateforme préférées"
+    },
+    "dashboardButtons": {
+      "myFavorites": "Mes Favoris",
+      "advancedFilters": "Filtres Avancés",
+      "preferences": "Préférences",
+      "settings": "Paramètres"
+    }
+  },
+  "JokePage": {
+    "searchFilters": {
+      "heading": "Filtres de recherche",
+      "paragraph": "Personnalisez votre expérience de recherche de blagues"
+    },
+    "searchForm": {
+      "placeholder": "Rechercher dans les blagues...",
+      "label": "Recherche par mot-clé",
+      "safeModeLabel": "Mode sécurisé",
+      "categoryLabel": "Sélectionner une catégorie"
+    },
+    "loadingMessage": "Chargement..."
   }
 }

@@ -1,21 +1,17 @@
-import type { OutletCtxType } from "@/types/OutletType";
-import {
-  DEFAULT_LANG,
-  DEFAULT_LOCAL,
-  locales,
-  SUPPORTED_LANGS,
-} from "@/utils/const";
+import type { OutletCtxImpl } from "@/types/OutletImpl";
+import { DEFAULT_LANG, DEFAULT_LOCAL, SUPPORTED_LANGS } from "@/utils/const";
+import { locales } from "@/utils/textConst";
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 
-const LanguageWrapper = () => {
+const   LanguageWrapper = () => {
   const { i18n } = useTranslation();
   const { lang } = useParams<{ lang?: string }>();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const languageConfig: OutletCtxType = useMemo(() => {
+  const languageConfig: OutletCtxImpl = useMemo(() => {
     const [language, locale] = lang?.split("-") || [];
 
     const validatedLanguage =
@@ -25,6 +21,9 @@ const LanguageWrapper = () => {
     const validatedLocaleObject = locales.find(
       (country) => country.code === locale
     );
+
+    console.log(validatedLanguage);
+    
 
     const validatedLocaleCode = validatedLocaleObject?.code ?? DEFAULT_LOCAL;
 

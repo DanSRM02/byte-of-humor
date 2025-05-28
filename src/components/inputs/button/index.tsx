@@ -1,14 +1,18 @@
 import type { ReactNode, Ref } from "react";
 import classes from "./Button.module.scss";
-import type { ColorTypes } from "@/types/ColorType";
+import type { ColorTypes } from "@/types/ColorImpl";
 
 type ButtonProps = {
   variant: ColorTypes | string;
   size: string;
   children: ReactNode;
   icon?: string;
+  tabIndex: number;
   ref?: Ref<HTMLButtonElement> | null;
   onClick?: () => void;
+  "aria-label"?: string;
+  "aria-pressed"?: boolean;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -17,6 +21,8 @@ const Button = ({
   onClick,
   variant,
   size,
+  tabIndex,
+  disabled = false,
   ...props
 }: ButtonProps) => {
   const buttonStyle = classes[`button-${variant}`];
@@ -27,6 +33,10 @@ const Button = ({
       ref={ref}
       className={`${buttonStyle} ${sizeStyle}`}
       onClick={onClick}
+      tabIndex={tabIndex}
+      aria-label={props["aria-label"]}
+      aria-pressed={props["aria-pressed"]}
+      disabled={disabled}
       {...props}
     >
       {children}

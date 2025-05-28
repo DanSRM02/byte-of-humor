@@ -89,21 +89,6 @@
       "submitButton": "Mach mit"
     }
   },
-  "SelectCountry": {
-    "introduction": {
-      "heading": "Wähle deine globale Bühne!",
-      "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
-    },
-    "searchControls": {
-      "inputPlaceholder": "Suche dein Land...",
-      "continueButtonLabel": "Weiter mit \"SelectCountry\""
-    },
-    "countryNames": {
-      "US": "Vereinigte Staaten",
-      "FR": "Frankreich",
-      "DE": "Deutschland"
-    }
-  },
   "ComedianLoginForm": {
     "introduction": {
       "heading": "Legende kehrt zurück? Melde dich an, um das Mikrofon zu behalten",
@@ -119,11 +104,91 @@
       "submitButton": "Tritt dem Humor bei"
     }
   },
+  "SelectCountry": {
+    "introduction": {
+      "heading": "Wähle deine globale Bühne!",
+      "paragraph": "Bite of Humor verbindet dich mit Comedy aus aller Welt. Sag uns, wo du deine humorvolle Reise beginnen möchtest."
+    },
+    "searchControls": {
+      "selectLabel": "Suche dein Land...",
+      "selectPlaceholder": "Weiter mit deiner Auswahl"
+    },
+    "countryNames": {
+      "US": "Vereinigte Staaten",
+      "FR": "Frankreich",
+      "DE": "Deutschland"
+    }
+  },
   "HeaderNavigation": {
     "navItems": {
       "home": "Startseite",
       "signUp": "Registrieren",
       "logIn": "Anmelden"
     }
+  },
+  "TheFinalSetupPage": {
+    "leadIn": {
+      "heading": "Willkommen bei Bite of Humor",
+      "paragraph": "Deine Einrichtung ist abgeschlossen! Erkunde die verschiedenen Bereiche deines personalisierten Humorerlebnisses."
+    },
+    "platformCards": {
+      "communicationHub": {
+        "title": "Kommunikationszentrum",
+        "description": "Bleib mit deiner Witz-Community verbunden",
+        "features": {
+          "feature1": "Tägliche Witz-Newsletter",
+          "feature2": "Community-Benachrichtigungen",
+          "feature3": "Personalisierte Empfehlungen",
+          "feature4": "Wöchentlicher Humor-Digest"
+        },
+        "badge": "Wesentlich"
+      },
+      "socialFeatures": {
+        "title": "Soziale Funktionen",
+        "description": "Verbinde dich und teile mit anderen Witz-Enthusiasten",
+        "features": {
+          "feature1": "Lieblingswitze teilen",
+          "feature2": "Anderen Benutzern folgen",
+          "feature3": "Witzsammlungen erstellen",
+          "feature4": "Community-Diskussionen"
+        },
+        "badge": "Interaktiv"
+      },
+      "premiumExperience": {
+        "title": "Premium-Erlebnis",
+        "description": "Schalte erweiterte Funktionen und exklusive Inhalte frei",
+        "features": {
+          "feature1": "Unbegrenzter Witzzugriff",
+          "feature2": "Erweiterte Filterung",
+          "feature3": "Premium-Kategorien",
+          "feature4": "Werbefreies Erlebnis"
+        },
+        "badge": "Exklusiv"
+      }
+    },
+    "dashboardCard": {
+      "title": "Schnellzugriffs-Dashboard",
+      "body": "Springe direkt zu deinen Lieblingsfunktionen der Plattform"
+    },
+    "dashboardButtons": {
+      "myFavorites": "Meine Favoriten",
+      "advancedFilters": "Erweiterte Filter",
+      "preferences": "Einstellungen",
+      "settings": "Konfigurationen"
+    }
+  },
+
+  "JokePage": {
+    "searchFilters": {
+      "heading": "Suchfilter",
+      "paragraph": "Passen Sie Ihr Witzesucherlebnis an"
+    },
+    "searchForm": {
+      "placeholder": "In Witzen suchen...",
+      "label": "Suche nach Stichwort",
+      "safeModeLabel": "Sicherer Modus",
+      "categoryLabel": "Kategorie auswählen"
+    },
+    "loadingMessage": "Wird geladen..."
   }
 }

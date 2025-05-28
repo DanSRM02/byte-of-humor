@@ -110,8 +110,8 @@
       "paragraph": "Bite of Humor connects you with comedy from every corner. Tell us where you want to start your humor journey."
     },
     "searchControls": {
-      "inputPlaceholder": "Search Your Country...",
-      "continueButtonLabel": "Continue with \"SelectCountry\""
+      "selectLabel": "Search Your Country...",
+      "selectPlaceholder": "Continue with your selection"
     },
     "countryNames": {
       "US": "United States",
@@ -125,5 +125,69 @@
       "signUp": "Sign Up",
       "logIn": "Log In"
     }
+  },
+  "TheFinalSetupPage": {
+    "leadIn": {
+      "heading": "Welcome to Bite of Humor",
+      "paragraph": "Your setup is complete! Explore the different sections of your personalized humor experience."
+    },
+    "platformCards": {
+      "communicationHub": {
+        "title": "Communication Hub",
+        "description": "Stay connected with your joke community",
+        "features": {
+          "feature1": "Daily joke newsletters",
+          "feature2": "Community notifications",
+          "feature3": "Personalized recommendations",
+          "feature4": "Weekly humor digest"
+        },
+        "badge": "Essential"
+      },
+      "socialFeatures": {
+        "title": "Social Features",
+        "description": "Connect and share with fellow joke enthusiasts",
+        "features": {
+          "feature1": "Share favorite jokes",
+          "feature2": "Follow other users",
+          "feature3": "Create joke collections",
+          "feature4": "Community discussions"
+        },
+        "badge": "Interactive"
+      },
+      "premiumExperience": {
+        "title": "Premium Experience",
+        "description": "Unlock advanced features and exclusive content",
+        "features": {
+          "feature1": "Unlimited joke access",
+          "feature2": "Advanced filtering",
+          "feature3": "Premium categories",
+          "feature4": "Ad-free experience"
+        },
+        "badge": "Exclusive"
+      }
+    },
+    "dashboardCard": {
+      "title": "Quick Access Dashboard",
+      "body": "Jump directly to your favorite platform features"
+    },
+    "dashboardButtons": {
+      "myFavorites": "My Favorites",
+      "advancedFilters": "Advanced Filters",
+      "preferences": "Preferences",
+      "settings": "Settings"
+    }
+  },
+  "JokePage": {
+    "searchFilters": {
+      "heading": "Search Filters",
+      "paragraph": "Customize your joke search experience"
+    },
+    "searchForm": {
+      "placeholder": "Search in jokes...",
+      "label": "Search by keyword",
+      "safeModeLabel": "Safe Mode",
+      "categoryLabel": "Select Category"
+    },
+    "loadingMessage": "Loading..."
   }
 }

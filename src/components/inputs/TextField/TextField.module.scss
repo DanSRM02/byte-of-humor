@@ -2,17 +2,18 @@
 
 .text-field {
   @include _theme.flex(column, center);
+
   &__label {
     font-weight: 600;
   }
 
   > input {
     font-family: "Inter", sans-serif;
-    border: 1px solid _theme.$secondary-bg-color;
+    border: 1px solid rgba(0, 0, 0, 0.253);
   }
 
   > textarea {
-    border: 1px solid _theme.$secondary-bg-color;
+    border: 1px solid rgba(0, 0, 0, 0.253);
     font-family: "Inter", sans-serif;
     max-width: 100%;
     max-height: min-content;
@@ -21,6 +22,69 @@
   > input[type="search"]::-webkit-search-cancel-button {
     filter: invert(50%);
     background-color: _theme.$primary-bg-color;
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+    gap: 0.5rem;
+    position: relative;
+    user-select: none;
+  }
+
+  &__checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__custom-checkbox {
+    width: 2.5rem;
+    height: 1.4rem;
+    background: _theme.$chip-secondary-bg-color;
+    border-radius: 1rem;
+    position: relative;
+    transition: 0.3s;
+    box-sizing: border-box;
+    display: inline-block;
+    outline: 2px solid _theme.$chip-secondary-border-color;
+  }
+
+  &__custom-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 0.2rem;
+    top: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    background: _theme.$primary-bg-color;
+    border-radius: 50%;
+    transition: transform 0.3s, 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__checkbox-input:checked + &__custom-checkbox {
+    background: _theme.$primary-bg-color;
+    outline: 2px solid _theme.$primary-accent-color;
+  }
+
+  &__checkbox-input:checked + &__custom-checkbox::after {
+    transform: translateX(1.1rem);
+    background: _theme.$primary-accent-color;
+  }
+
+  &__checkbox-input:focus + &__custom-checkbox {
+    outline: 2px solid _theme.$primary-accent-color;
+    outline-offset: 2px;
+  }
+
+  &__checkbox-label {
+    margin-left: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
   }
 }
 

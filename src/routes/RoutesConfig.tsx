@@ -9,6 +9,8 @@ import SignUp from "@/pages/SignUp";
 import SelectCountry from "@/pages/SelectCountry";
 import LanguageWrapper from "@/components/wrapper/LanguageWrapper";
 import { DEFAULT_LANG } from "@/utils/const";
+import JokePage from "@/pages/JokePage";
+import ConfigurationPage from "@/pages/Configuration";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
           {
             path: "final",
             element: <TheFinalSetupPage />,
+          },
+          {
+            path: "configuration",
+            element: <ConfigurationPage />,
+          },
+          {
+            path: "joke-explorer",
+            element: <JokePage />,
           },
         ],
       },
