@@ -8,25 +8,23 @@ import { CiHeart, CiFilter } from "react-icons/ci";
 
 import Button from "@/components/inputs/Button";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useOutletContext } from "react-router-dom";
-import type { OutletCtxImpl } from "@/types/OutletImpl";
+import { useNavigate } from "react-router-dom";
 
 function TheFinalSetupPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { localizationRouter } = useOutletContext<OutletCtxImpl>();
 
   const handleRedirect = (typeButton: string) => {
     switch (typeButton) {
       case "filter":
-        navigate(`/${localizationRouter}/setup/joke-explorer`);
+        navigate("../joke-explorer");
         break;
       case "configuration":
-        navigate(`/${localizationRouter}/setup/configuration`);
-        break;    
+        navigate("../configuration");
+        break;
       case "premiumExperience":
-        navigate(`/${localizationRouter}/setup/premium`);
-        break
+        navigate("../premium");
+        break;
       default:
         break;
     }
@@ -50,16 +48,16 @@ function TheFinalSetupPage() {
           {platformSections.map((card) => (
             <Card
               key={card.title}
-              title={t(
-                `TheFinalSetupPage.platformCards.${card.title}.title`
-              )}
+              title={t(`TheFinalSetupPage.platformCards.${card.title}.title`)}
               body={t(
                 `TheFinalSetupPage.platformCards.${card.title}.description`
               )}
-              icon={card.icon ? <card.icon aria-label={card.title + " icon"} /> : null}
-              badge={t(
-                `TheFinalSetupPage.platformCards.${card.title}.badge`
-              )}
+              icon={
+                card.icon ? (
+                  <card.icon aria-label={card.title + " icon"} />
+                ) : null
+              }
+              badge={t(`TheFinalSetupPage.platformCards.${card.title}.badge`)}
               features={card.features?.map((featureKey) =>
                 t(
                   `TheFinalSetupPage.platformCards.${card.title}.features.${featureKey}`

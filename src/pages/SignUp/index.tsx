@@ -3,16 +3,14 @@ import classes from "./SignUp.module.scss";
 import TextField from "@/components/inputs/TextField";
 import Button from "@/components/inputs/Button";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useOutletContext } from "react-router-dom";
-import type { OutletCtxImpl } from "@/types/OutletImpl";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { localizationRouter } = useOutletContext<OutletCtxImpl>();
 
   const handleRedirect = () => {
-    navigate(`/${localizationRouter}/setup/select-country`);
+    navigate("../select-country");
   };
   return (
     <>
@@ -63,6 +61,7 @@ function SignUp() {
             />
           </fieldset>
           <Button
+            type="button" // change to "submit" if you want to submit the form
             variant={"primary"}
             size="medium"
             onClick={handleRedirect}

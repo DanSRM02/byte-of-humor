@@ -6,6 +6,7 @@ type ButtonProps = {
   variant: ColorTypes | string;
   size: string;
   children: ReactNode;
+  type?: "button" | "submit" | "reset";
   icon?: string;
   tabIndex: number;
   ref?: Ref<HTMLButtonElement> | null;
@@ -21,6 +22,7 @@ const Button = ({
   onClick,
   variant,
   size,
+  type,
   tabIndex,
   disabled = false,
   ...props
@@ -31,6 +33,7 @@ const Button = ({
   return (
     <button
       ref={ref}
+      type={type}
       className={`${buttonStyle} ${sizeStyle}`}
       onClick={onClick}
       tabIndex={tabIndex}

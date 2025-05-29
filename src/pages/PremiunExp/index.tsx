@@ -3,27 +3,29 @@ import Card from "@/components/feedback/Card";
 import { plans } from "@/utils/textConst";
 import classes from "./Configuration.module.scss";
 import { useTranslation } from "react-i18next";
+import { NavLink } from "react-router-dom";
 
 function PremiunExpPage() {
   const { t } = useTranslation();
   return (
     <>
       <section>
+        <NavLink to={`../final`}>asd</NavLink>
         <LeadIn
-          heading="Do you want a Premium Experience!"
-          paragraph="Is that a joke! There only one way to find out!"
+          heading={t("plans.leadIn.heading")}
+          paragraph={t("plans.leadIn.paragraph")}
         />
         <article className={classes["plans__menu"]}>
           {plans.map((plan, index) => (
             <Card
               key={index}
-              title={t(`plans.${plan.title}.name`)}
-              body={`${t(`plans.${plan.title}.description`)} ${t(
+              title={`${t(`plans.${plan.title}.name`)} / ${t(
                 `plans.${plan.title}.price`,
                 {
                   value: plan.price,
                 }
-              )} `}
+              )}`}
+              body={`${t(`plans.${plan.title}.description`)} `}
               features={plan.features?.map((feature) =>
                 t(`plans.${plan.title}.features.${feature}`)
               )}

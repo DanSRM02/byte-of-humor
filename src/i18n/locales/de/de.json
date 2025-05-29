@@ -136,6 +136,10 @@
     }
   },
   "plans": {
+    "leadIn": {
+      "heading": "Wünschen Sie sich ein Premium-Erlebnis!",
+      "paragraph": "Ist das ein Scherz! Es gibt nur einen Weg, es herauszufinden!"
+    },
     "basic": {
       "name": "Basis",
       "description": "Ideal für Einsteiger, die einen Vorgeschmack auf Humor wollen.",

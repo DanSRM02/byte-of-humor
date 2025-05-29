@@ -3,16 +3,14 @@ import Button from "@/components/inputs/Button";
 import TextField from "@/components/inputs/TextField";
 import classes from "./LogIn.module.scss";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useOutletContext } from "react-router-dom";
-import type { OutletCtxImpl } from "@/types/OutletImpl";
+import { useNavigate } from "react-router-dom";
 
 function LogIn() {
   const { t } = useTranslation();
-  const { localizationRouter } = useOutletContext<OutletCtxImpl>();
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate(`/${localizationRouter}/setup/select-country`);
+    navigate("../select-country");
   };
   return (
     <>
@@ -48,6 +46,7 @@ function LogIn() {
           />
 
           <Button
+            type="button" // change to "submit" if you want to submit the form
             variant={"primary"}
             size="medium"
             onClick={handleRedirect}

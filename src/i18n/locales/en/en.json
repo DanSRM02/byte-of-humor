@@ -117,7 +117,7 @@
       "selectLabel": "Search Your Language...",
       "selectPlaceholder": "Continue with your Language"
     },
-    "languageNames": {
+    "languagesNames": {
       "fr": "French",
       "de": "German",
       "en": "English"
@@ -129,6 +129,10 @@
     }
   },
   "plans": {
+    "LeadIn": {
+      "heading": "Do you want a Premium Experience!",
+      "paragraph": "Is that a joke! There's only one way to find out!"
+    },
     "basic": {
       "name": "Basic",
       "description": "A starter plan for casual joke lovers. Enjoy a limited selection of jokes and standard features.",

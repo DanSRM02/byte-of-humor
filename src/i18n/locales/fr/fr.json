@@ -117,7 +117,7 @@
       "selectLabel": "Recherchez votre langue...",
       "selectPlaceholder": "Continuez avec votre langue"
     },
-    "languageNames": {
+    "languagesNames": {
       "fr": "Français",
       "de": "Allemand",
       "en": "Anglais"
@@ -136,6 +136,10 @@
     }
   },
   "plans": {
+    "LeadIn": {
+      "heading": "Envie d'une expérience Premium !",
+      "paragraph": "Est-ce une blague ! Il n'y a qu'une seule façon de le découvrir !"
+    },
     "basic": {
       "name": "Basique",
       "description": "Un plan d'entrée pour profiter de l'humour avec des fonctionnalités essentielles.",

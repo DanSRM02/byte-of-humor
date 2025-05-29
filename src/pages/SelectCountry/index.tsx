@@ -82,11 +82,11 @@ function SelectCountry() {
               {t("SelectCountry.searchLanguageControls.selectPlaceholder")}
             </option>
             <option value={DEFAULT_LANG}>
-              {t("SelectCountry.languageNames.en")}
+              {t("SelectCountry.languagesNames.en")}
             </option>
             {SUPPORTED_LANGS.map((lang, index) => (
               <option key={index} value={lang}>
-                {t(`SelectCountry.languageNames.${lang}`)}
+                {t(`SelectCountry.languagesNames.${lang}`)}
               </option>
             ))}
           </TextField>
