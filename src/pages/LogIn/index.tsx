@@ -4,6 +4,7 @@ import TextField from "@/components/inputs/TextField";
 import classes from "./LogIn.module.scss";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 function LogIn() {
   const { t } = useTranslation();
@@ -12,6 +13,30 @@ function LogIn() {
   const handleRedirect = () => {
     navigate("../select-country");
   };
+
+  const translations = useMemo(
+    () => ({
+      intro: {
+        heading: t("ComedianLogInForm.introduction.heading"),
+        paragraph: t("ComedianLogInForm.introduction.paragraph"),
+      },
+      fields: {
+        name: {
+          placeholder: t("ComedianLogInForm.fields.namePlaceholder"),
+          label: t("ComedianLogInForm.fields.nameLabel"),
+        },
+        email: {
+          placeholder: t("ComedianLogInForm.fields.emailPlaceholder"),
+          label: t("ComedianLogInForm.fields.emailLabel"),
+        },
+      },
+      actions: {
+        submitButton: t("ComedianLogInForm.actions.submitButton"),
+      },
+    }),
+    [t]
+  );
+
   return (
     <>
       <section
@@ -20,8 +45,8 @@ function LogIn() {
         tabIndex={0}
       >
         <LeadIn
-          heading={t("ComedianLoginForm.introduction.heading")}
-          paragraph={t("ComedianLoginForm.introduction.paragraph")}
+          heading={translations.intro.heading}
+          paragraph={translations.intro.paragraph}
         />
         <form
           className={classes["log-in__form"]}
@@ -29,31 +54,31 @@ function LogIn() {
         >
           <TextField
             id="comedian-name"
-            placeholder={t("ComedianLoginForm.fields.namePlaceholder")}
-            label={t("ComedianLoginForm.fields.nameLabel")}
+            placeholder={translations.fields.name.placeholder}
+            label={translations.fields.name.label}
             color="primary"
             type="text"
-            aria-label={t("ComedianLoginForm.fields.nameLabel")}
+            aria-label={translations.fields.name.label}
           />
 
           <TextField
             id="comedian-email"
-            placeholder={t("ComedianLoginForm.fields.emailPlaceholder")}
-            label={t("ComedianLoginForm.fields.emailLabel")}
+            placeholder={translations.fields.email.placeholder}
+            label={translations.fields.email.label}
             color="primary"
             type="email"
-            aria-label={t("ComedianLoginForm.fields.emailLabel")}
+            aria-label={translations.fields.email.label}
           />
 
           <Button
-            type="button" // change to "submit" if you want to submit the form
+            type="button"
             variant={"primary"}
             size="medium"
             onClick={handleRedirect}
-            aria-label={t("ComedianLoginForm.actions.submitButton")}
+            aria-label={translations.actions.submitButton}
             tabIndex={0}
           >
-            {t("ComedianLoginForm.actions.submitButton")}
+            {translations.actions.submitButton}
           </Button>
         </form>
       </section>

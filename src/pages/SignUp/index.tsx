@@ -4,6 +4,7 @@ import TextField from "@/components/inputs/TextField";
 import Button from "@/components/inputs/Button";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 function SignUp() {
   const { t } = useTranslation();
@@ -12,6 +13,34 @@ function SignUp() {
   const handleRedirect = () => {
     navigate("../select-country");
   };
+
+  const translations = useMemo(
+    () => ({
+      intro: {
+        heading: t("ComedianSignUpForm.introduction.heading"),
+        paragraph: t("ComedianSignUpForm.introduction.paragraph"),
+      },
+      fields: {
+        name: {
+          placeholder: t("ComedianSignUpForm.fields.namePlaceholder"),
+          label: t("ComedianSignUpForm.fields.nameLabel"),
+        },
+        email: {
+          placeholder: t("ComedianSignUpForm.fields.emailPlaceholder"),
+          label: t("ComedianSignUpForm.fields.emailLabel"),
+        },
+        joke: {
+          placeholder: t("ComedianSignUpForm.fields.jokePlaceholder"),
+          label: t("ComedianSignUpForm.fields.jokeLabel"),
+        },
+      },
+      actions: {
+        submitButton: t("ComedianSignUpForm.actions.submitButton"),
+      },
+    }),
+    [t]
+  );
+
   return (
     <>
       <section
@@ -20,8 +49,8 @@ function SignUp() {
         tabIndex={0}
       >
         <LeadIn
-          heading={t("ComedianSignUpForm.introduction.heading")}
-          paragraph={t("ComedianSignUpForm.introduction.paragraph")}
+          heading={translations.intro.heading}
+          paragraph={translations.intro.paragraph}
         />
         <form
           className={classes["sign-up__form"]}
@@ -29,46 +58,46 @@ function SignUp() {
         >
           <fieldset className={classes["fieldset"]}>
             <legend className={classes["fieldset__legend"]}>
-              {t("ComedianSignUpForm.introduction.heading")}
+              {translations.intro.heading}
             </legend>
             <span className={classes["fieldset__first-elements"]}>
               <TextField
-                placeholder={t("ComedianSignUpForm.fields.namePlaceholder")}
-                label={t("ComedianSignUpForm.fields.nameLabel")}
+                placeholder={translations.fields.name.placeholder}
+                label={translations.fields.name.label}
                 color="primary"
                 type="text"
                 id="comedian-name"
-                aria-label={t("ComedianSignUpForm.fields.nameLabel")}
+                aria-label={translations.fields.name.label}
               />
 
               <TextField
                 id="comedian-email"
-                placeholder={t("ComedianSignUpForm.fields.emailPlaceholder")}
-                label={t("ComedianSignUpForm.fields.emailLabel")}
+                placeholder={translations.fields.email.placeholder}
+                label={translations.fields.email.label}
                 color="primary"
                 type="email"
-                aria-label={t("ComedianSignUpForm.fields.emailLabel")}
+                aria-label={translations.fields.email.label}
               />
             </span>
             <TextField
               id="comedian-joke"
-              placeholder={t("ComedianSignUpForm.fields.jokePlaceholder")}
-              label={t("ComedianSignUpForm.fields.jokeLabel")}
+              placeholder={translations.fields.joke.placeholder}
+              label={translations.fields.joke.label}
               color="primary"
               multiline
               rows={5}
-              aria-label={t("ComedianSignUpForm.fields.jokeLabel")}
+              aria-label={translations.fields.joke.label}
             />
           </fieldset>
           <Button
-            type="button" // change to "submit" if you want to submit the form
+            type="button"
             variant={"primary"}
             size="medium"
             onClick={handleRedirect}
-            aria-label={t("ComedianSignUpForm.actions.submitButton")}
+            aria-label={translations.actions.submitButton}
             tabIndex={0}
           >
-            {t("ComedianSignUpForm.actions.submitButton")}
+            {translations.actions.submitButton}
           </Button>
         </form>
       </section>

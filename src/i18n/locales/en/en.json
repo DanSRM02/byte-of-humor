@@ -69,7 +69,10 @@
   "ErrorPage": {
     "content": {
       "title": "Error Page",
-      "message": "An error occurred!"
+      "message": "An error occurred!"      
+    },
+    "actions": {
+      "button": "Go to Home"
     }
   },
   "ComedianSignUpForm": {
@@ -129,6 +132,9 @@
     }
   },
   "plans": {
+    "navLink": {
+      "text": "Go to Back"
+    },
     "LeadIn": {
       "heading": "Do you want a Premium Experience!",
       "paragraph": "Is that a joke! There's only one way to find out!"
@@ -239,6 +245,7 @@
       "safeModeLabel": "Safe Mode",
       "categoryLabel": "Select Category"
     },
-    "loadingMessage": "Loading..."
+    "loadingMessage": "Loading...",
+    "safeModeWarning": "Safe mode is not allowed for the 'Dark' category."
   }
 }

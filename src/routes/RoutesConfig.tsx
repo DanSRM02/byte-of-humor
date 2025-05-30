@@ -10,8 +10,8 @@ import SelectCountry from "@/pages/SelectCountry";
 import LanguageWrapper from "@/components/wrapper/LanguageWrapper";
 import { DEFAULT_LANG } from "@/utils/const";
 import JokePage from "@/pages/JokePage";
-import ConfigurationPage from "@/pages/PremiunExp";
-import PremiunExpPage from "@/pages/PremiunExp";
+import ConfigurationPage from "@/pages/PremiumExpPage";
+import PremiunExpPage from "@/pages/PremiumExpPage";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +20,7 @@ const router = createBrowserRouter([
     element: <Navigate to={`/${DEFAULT_LANG}`} />,
   },
   {
-    path: "/:lang",
-    errorElement: <ErrorPage />,
+    path: "/:lang",    
     element: <LanguageWrapper />,
     children: [
       {

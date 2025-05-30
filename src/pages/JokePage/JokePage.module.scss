@@ -3,12 +3,26 @@
   &__header {
     @include theme.flex(null, space-between, center);
     padding: 2rem;
+    width: 85%;
     @include theme.styled-border;
   }
-  &__header-filter{
-    @include theme.flex(null, null, start);    
+
+  &__header-container {
+    @include theme.flex(null, center, center);
+    gap: 5rem;
+
+    svg:active,
+    svg:hover {      
+      fill: theme.$secondary-bg-color;
+      border-bottom: 2px solid theme.$secondary-bg-color;
+    }
+  }
+
+  &__header-filter {
+    @include theme.flex(null, null, start);
     gap: 1.5rem;
   }
+
   &__menu {
     display: grid;
     grid-template-columns: repeat(2, minmax(20rem, 1fr));

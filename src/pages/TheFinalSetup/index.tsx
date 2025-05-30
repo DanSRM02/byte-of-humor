@@ -9,10 +9,77 @@ import { CiHeart, CiFilter } from "react-icons/ci";
 import Button from "@/components/inputs/Button";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 function TheFinalSetupPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const platformSectionCard = useMemo(
+    () =>
+      platformSections.map((section) => {
+        const title = t(
+          `TheFinalSetupPage.platformCards.${section.title}.title`
+        );
+        const description = t(
+          `TheFinalSetupPage.platformCards.${section.title}.description`
+        );
+        const badge = t(
+          `TheFinalSetupPage.platformCards.${section.title}.badge`
+        );
+        const features = section.features?.map((featureKey) =>
+          t(
+            `TheFinalSetupPage.platformCards.${section.title}.features.${featureKey}`
+          )
+        );
+        const icon = section.icon ? (
+          <section.icon aria-label={section.title + " icon"} />
+        ) : null;
+        return {
+          key: section.title,
+          title,
+          body: description,
+          icon,
+          badge,
+          features,
+          onExplore: () => handleRedirect(section.title),
+          variant: "expandable" as const,
+        };
+      }),
+    [t, navigate]
+  );
+
+  const dashboardTranslations = {
+    title: t("TheFinalSetupPage.dashboardCard.title"),
+    body: t("TheFinalSetupPage.dashboardCard.body"),
+    myFavorites: t("TheFinalSetupPage.dashboardButtons.myFavorites"),
+    advancedFilters: t("TheFinalSetupPage.dashboardButtons.advancedFilters"),
+    preferences: t("TheFinalSetupPage.dashboardButtons.preferences"),
+    settings: t("TheFinalSetupPage.dashboardButtons.settings"),
+  };
+
+  const dashboardButtons = [
+    {
+      label: dashboardTranslations.myFavorites,
+      icon: <LuLaugh size="1.2rem" aria-hidden="true" />,
+      onClick: () => handleRedirect(""),
+    },
+    {
+      label: dashboardTranslations.advancedFilters,
+      icon: <CiHeart size="1.2rem" aria-hidden="true" />,
+      onClick: () => handleRedirect(""),
+    },
+    {
+      label: dashboardTranslations.preferences,
+      icon: <CiFilter size="1.2rem" aria-hidden="true" />,
+      onClick: () => handleRedirect("filter"),
+    },
+    {
+      label: dashboardTranslations.settings,
+      icon: <IoSettingsOutline size="1.2rem" aria-hidden="true" />,
+      onClick: () => handleRedirect("configuration"),
+    },
+  ];
 
   const handleRedirect = (typeButton: string) => {
     switch (typeButton) {
@@ -29,11 +96,12 @@ function TheFinalSetupPage() {
         break;
     }
   };
+
   return (
     <>
       <LeadIn
-        heading={t("TheFinalSetupPage.leadIn.heading")}
-        paragraph={t("TheFinalSetupPage.leadIn.paragraph")}
+        heading={dashboardTranslations.title}
+        paragraph={dashboardTranslations.body}
       />
       <section
         className={classes["features"]}
@@ -45,26 +113,16 @@ function TheFinalSetupPage() {
           aria-label="Platform features list"
           tabIndex={0}
         >
-          {platformSections.map((card) => (
+          {platformSectionCard.map((card) => (
             <Card
-              key={card.title}
-              title={t(`TheFinalSetupPage.platformCards.${card.title}.title`)}
-              body={t(
-                `TheFinalSetupPage.platformCards.${card.title}.description`
-              )}
-              icon={
-                card.icon ? (
-                  <card.icon aria-label={card.title + " icon"} />
-                ) : null
-              }
-              badge={t(`TheFinalSetupPage.platformCards.${card.title}.badge`)}
-              features={card.features?.map((featureKey) =>
-                t(
-                  `TheFinalSetupPage.platformCards.${card.title}.features.${featureKey}`
-                )
-              )}
-              onExplore={() => handleRedirect(card.title)}
-              variant="expandable"
+              key={card.key}
+              title={card.title}
+              body={card.body}
+              icon={card.icon}
+              badge={card.badge}
+              features={card.features}
+              onExplore={card.onExplore}
+              variant={card.variant}
             />
           ))}
         </article>
@@ -74,55 +132,24 @@ function TheFinalSetupPage() {
           tabIndex={0}
         >
           <Card
-            title={t("TheFinalSetupPage.dashboardCard.title")}
-            body={t("TheFinalSetupPage.dashboardCard.body")}
+            title={dashboardTranslations.title}
+            body={dashboardTranslations.body}
           />
           <span className={classes["dashboard__buttons"]}>
-            <Button
-              onClick={() => handleRedirect("")}
-              size="large"
-              variant="outline"
-              aria-label={t("TheFinalSetupPage.dashboardButtons.myFavorites")}
-              tabIndex={0}
-            >
-              <LuLaugh size={"1.2rem"} aria-hidden="true" />
-              <br />
-              {t("TheFinalSetupPage.dashboardButtons.myFavorites")}
-            </Button>
-            <Button
-              onClick={() => handleRedirect("")}
-              size="large"
-              variant="outline"
-              aria-label={t(
-                "TheFinalSetupPage.dashboardButtons.advancedFilters"
-              )}
-              tabIndex={0}
-            >
-              <CiHeart size={"1.2rem"} aria-hidden="true" /> <br />
-              {t("TheFinalSetupPage.dashboardButtons.advancedFilters")}
-            </Button>
-            <Button
-              onClick={() => handleRedirect("filter")}
-              size="large"
-              variant="outline"
-              aria-label={t("TheFinalSetupPage.dashboardButtons.preferences")}
-              tabIndex={0}
-            >
-              <CiFilter size={"1.2rem"} aria-hidden="true" />
-              <br />
-              {t("TheFinalSetupPage.dashboardButtons.preferences")}
-            </Button>
-            <Button
-              onClick={() => handleRedirect("configuration")}
-              size="large"
-              variant="outline"
-              aria-label={t("TheFinalSetupPage.dashboardButtons.settings")}
-              tabIndex={0}
-            >
-              <IoSettingsOutline size={"1.2rem"} aria-hidden="true" />
-              <br />
-              {t("TheFinalSetupPage.dashboardButtons.settings")}
-            </Button>
+            {dashboardButtons.map((btn) => (
+              <Button
+                key={btn.label}
+                onClick={btn.onClick}
+                size="large"
+                variant="outline"
+                aria-label={btn.label}
+                tabIndex={0}
+              >
+                {btn.icon}
+                <br />
+                {btn.label}
+              </Button>
+            ))}
           </span>
         </article>
       </section>

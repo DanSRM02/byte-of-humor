@@ -2,7 +2,7 @@ import type { Country } from "@/types/CountryImpl";
 import type { UnorderedListImpl } from "@/types/UnorderedListType";
 import { LuCrown, LuUsers, LuMail, LuCircle, LuStar } from "react-icons/lu";
 
-export const countries: Country[] = [
+export const COUNTRIES: Country[] = [
   { code: "FR", name: "France", flag: "🇫🇷" },
   { code: "DE", name: "Germany", flag: "🇩🇪" },
   { code: "US", name: "United States", flag: "🇺🇸" },

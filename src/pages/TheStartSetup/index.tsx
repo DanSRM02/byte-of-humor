@@ -12,6 +12,19 @@ function TheStartSetupPage() {
   const [message, setMessage] = useState("");
   const [timesClicked, setTimesClicked] = useState(2);
 
+  const translations = {
+    intro: {
+      title: t("FirstSetup.introduction.title"),
+      remark: t("FirstSetup.introduction.remark"),
+      paragraph1: t("FirstSetup.introduction.paragraph1"),
+      paragraph2: t("FirstSetup.introduction.paragraph2"),
+      paragraph3: t("FirstSetup.introduction.paragraph3"),
+    },
+    actions: {
+      buttonMessage: message || t("FirstSetup.actions.buttonMessages.message1"),
+    },
+  };
+
   useEffect(() => {
     setMessage(t("FirstSetup.actions.buttonMessages.message1"));
   }, [t]);
@@ -68,31 +81,30 @@ function TheStartSetupPage() {
           <h2
             className={classes["question__subtitle"]}
             tabIndex={0}
-            aria-label={t("FirstSetup.introduction.title")}
+            aria-label={translations.intro.title}
           >
-            {t("FirstSetup.introduction.title")}
+            {translations.intro.title}
           </h2>
           <h5
             className={classes["question__remark"]}
             tabIndex={0}
-            aria-label={t("FirstSetup.introduction.remark")}
+            aria-label={translations.intro.remark}
           >
-            {t("FirstSetup.introduction.remark")}
+            {translations.intro.remark}
           </h5>
           <p className={classes["question__paragraph"]}>
             <Trans i18nKey="FirstSetup.introduction.paragraph1">
-              If the answer is “yes”, I'm
-              <em> so sorry </em> that's not the place.
+              {translations.intro.paragraph1}
             </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
             <Trans i18nKey="FirstSetup.introduction.paragraph2">
-              Or I'm <em>joking?</em>
+              {translations.intro.paragraph2}
             </Trans>
           </p>
           <p className={classes["question__paragraph"]}>
             <Trans i18nKey="FirstSetup.introduction.paragraph3">
-              There's only <strong>one</strong> way to know...
+              {translations.intro.paragraph3}
             </Trans>
           </p>
         </article>
@@ -102,9 +114,7 @@ function TheStartSetupPage() {
             variant="primary"
             ref={buttonRef}
             onClick={handleClick}
-            aria-label={
-              message || t("FirstSetup.actions.buttonMessages.message1")
-            }
+            aria-label={translations.actions.buttonMessage}
             tabIndex={0}
           >
             {message}

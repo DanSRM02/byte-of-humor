@@ -4,7 +4,7 @@ import type { Locale } from "@/types/CountryImpl";
 
 export const DEFAULT_LANG: string = "en";
 export const DEFAULT_LOCAL: string = "US";
-export const SUPPORTED_LANGS: string[] = ["fr", "de"];
+export const SUPPORTED_LANGS: string[] = ["en", "fr", "de"];
 
 export const SUPPORTED_LOCALES: Locale[] = [
   { language: "en-US", currency: "USD" },

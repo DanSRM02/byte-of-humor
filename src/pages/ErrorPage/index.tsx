@@ -10,6 +10,11 @@ function ErrorPage() {
   const handleRedirect = () => {
     navigate("..");
   };
+
+  const errorTitle = t("ErrorPage.content.title");
+  const errorMessage = t("ErrorPage.content.message");
+  const goBackLabel = t("ErrorPage.actions.goBack", "Go Back");
+
   return (
     <>
       <main className={classes["error"]} aria-label="Error page" tabIndex={0}>
@@ -22,20 +27,20 @@ function ErrorPage() {
             ⚠️
           </div>
           <h2 className={classes["error__title"]} tabIndex={0}>
-            {t("ErrorPage.content.title")}
+            {errorTitle}
           </h2>
           <p className={classes["error__message"]} tabIndex={0}>
-            {t("ErrorPage.content.message")}
+            {errorMessage}
           </p>
           <div className={classes["error__actions"]}>
             <Button
               variant="primary"
               size="medium"
               onClick={handleRedirect}
-              aria-label={t("ErrorPage.actions.goBack", "Go Back")}
+              aria-label={goBackLabel}
               tabIndex={0}
             >
-              {t("ErrorPage.actions.goBack", "Go Back")}
+              {goBackLabel}
             </Button>
           </div>
         </div>

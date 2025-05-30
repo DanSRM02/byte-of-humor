@@ -70,6 +70,9 @@
     "content": {
       "title": "Fehlerseite",
       "message": "Ein Fehler ist aufgetreten!"
+    },
+    "actions": {
+      "button": "Zurück zur vorherigen Seite"
     }
   },
   "ComedianSignUpForm": {
@@ -136,7 +139,10 @@
     }
   },
   "plans": {
-    "leadIn": {
+    "navLink": {
+      "text": "Zum Finale"
+    },
+    "LeadIn": {
       "heading": "Wünschen Sie sich ein Premium-Erlebnis!",
       "paragraph": "Ist das ein Scherz! Es gibt nur einen Weg, es herauszufinden!"
     },
@@ -230,6 +236,9 @@
   },
 
   "JokePage": {
+    "navLink": {
+      "text": "Zum Finale"
+    },
     "searchFilters": {
       "heading": "Suchfilter",
       "paragraph": "Passen Sie Ihr Witzesucherlebnis an"
@@ -240,6 +249,7 @@
       "safeModeLabel": "Sicherer Modus",
       "categoryLabel": "Kategorie auswählen"
     },
-    "loadingMessage": "Wird geladen..."
+    "loadingMessage": "Wird geladen...",
+    "safeModeWarning": "Sicherer Modus ist für die Kategorie 'Dark' nicht erlaubt."
   }
 }

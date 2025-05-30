@@ -1,0 +1,18 @@
+@use "@styles/__theme" as theme;
+.plans {
+  &__header {
+    @include theme.flex(row, null, center);
+    gap: 2rem;
+    svg:active,
+    svg:hover {
+      fill: theme.$secondary-bg-color;
+      border-bottom: 2px solid theme.$secondary-bg-color;
+    }
+  }
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
+    margin: 2rem;
+    gap: 1rem;
+  }
+}

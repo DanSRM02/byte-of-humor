@@ -2,30 +2,93 @@ import LeadIn from "@/components/dataDisplay/LeadIn";
 import classes from "./SelectCountry.module.scss";
 import { useTranslation } from "react-i18next";
 import TextField from "@/components/inputs/TextField";
-import { countries } from "@/utils/textConst";
+import { COUNTRIES } from "@/utils/textConst";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useRef } from "react";
-import { DEFAULT_LANG, SUPPORTED_LANGS } from "@/utils/const";
+import { useEffect, useMemo, useState } from "react";
+import { SUPPORTED_LANGS } from "@/utils/const";
 
 function SelectCountry() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const selectCountryRef = useRef<HTMLSelectElement>(null);
-  const selectLanguageRef = useRef<HTMLSelectElement>(null);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
 
-  const handleSelectChange = () => {
-    const code = selectCountryRef.current?.value;
-    const language = selectLanguageRef.current?.value;
+  const languageNames = useMemo(
+    () =>
+      Object.fromEntries(
+        SUPPORTED_LANGS.map((lang) => [
+          lang,
+          t(`SelectCountry.languagesNames.${lang}`),
+        ])
+      ),
+    [t]
+  );
 
-    if (code && language) {
-      const newLangParam = `${language}-${code}`;
+  const countryNames = useMemo(
+    () =>
+      Object.fromEntries(
+        COUNTRIES.map((country) => [
+          country.code,
+          t(`SelectCountry.countryNames.${country.code}`),
+        ])
+      ),
+    [t]
+  );
+
+  const translations = useMemo(
+    () => ({
+      intro: {
+        heading: t("SelectCountry.introduction.heading"),
+        paragraph: t("SelectCountry.introduction.paragraph"),
+      },
+      country: {
+        label: t("SelectCountry.searchCountryControls.selectLabel"),
+        placeholder: t("SelectCountry.searchCountryControls.selectPlaceholder"),
+      },
+      language: {
+        label: t("SelectCountry.searchLanguageControls.selectLabel"),
+        placeholder: t(
+          "SelectCountry.searchLanguageControls.selectPlaceholder"
+        ),
+        names: languageNames,
+      },
+      countryNames: countryNames,
+    }),
+    [t, languageNames, countryNames]
+  );
+
+  useEffect(() => {
+    if (selectedCountry && selectedLanguage) {
+      const newLangParam = `${selectedLanguage}-${selectedCountry}`;
       const currentPath = location.pathname.split("/");
       currentPath[1] = newLangParam;
       const pathToRedirect = `/${currentPath.slice(1, -1).join("/")}/final`;
       navigate(pathToRedirect);
     }
-  };
+  }, [selectedCountry, selectedLanguage, location, navigate]);
+
+  const renderCountryOptions = () => [
+    <option key="placeholder" value="" disabled>
+      {translations.country.placeholder}
+    </option>,
+    ...COUNTRIES.map((country) => (
+      <option key={country.code} value={country.code}>
+        {translations.countryNames[country.code]}
+      </option>
+    )),
+  ];
+
+  const renderLanguageOptions = () => [
+    <option key="placeholder" value="" disabled>
+      {translations.language.placeholder}
+    </option>,
+    ...SUPPORTED_LANGS.map((lang) => (
+      <option key={lang} value={lang}>
+        {translations.language.names[lang]}
+      </option>
+    )),
+  ];
 
   return (
     <>
@@ -40,8 +103,8 @@ function SelectCountry() {
           tabIndex={0}
         >
           <LeadIn
-            heading={t("SelectCountry.introduction.heading")}
-            paragraph={t("SelectCountry.introduction.paragraph")}
+            heading={translations.intro.heading}
+            paragraph={translations.intro.paragraph}
           />
         </aside>
         <article
@@ -51,44 +114,31 @@ function SelectCountry() {
         >
           <TextField
             color="secondary"
-            refSelect={selectCountryRef}
             id="country-select"
-            label={t("SelectCountry.searchCountryControls.selectLabel")}
+            label={translations.country.label}
             select
-            onChange={handleSelectChange}
+            value={selectedCountry}
+            onChange={(e) => {
+              setSelectedCountry(e.target.value);
+            }}
             required
-            aria-label={t("SelectCountry.searchCountryControls.selectLabel")}
+            aria-label={translations.country.label}
           >
-            <option value="" selected disabled>
-              {t("SelectCountry.searchCountryControls.selectPlaceholder")}
-            </option>
-            {countries.map((country, index) => (
-              <option key={`${index}${country.code}`} value={country.code}>
-                {t(`SelectCountry.countryNames.${country.code}`)}
-              </option>
-            ))}
+            {renderCountryOptions()}
           </TextField>
           <TextField
             color="secondary"
-            refSelect={selectLanguageRef}
             id="language-select"
-            label={t("SelectCountry.searchLanguageControls.selectLabel")}
+            label={translations.language.label}
             select
-            onChange={handleSelectChange}
+            value={selectedLanguage}
+            onChange={(e) => {
+              setSelectedLanguage(e.target.value);
+            }}
             required
-            aria-label={t("SelectCountry.searchLanguageControls.selectLabel")}
+            aria-label={translations.language.label}
           >
-            <option value="" selected disabled>
-              {t("SelectCountry.searchLanguageControls.selectPlaceholder")}
-            </option>
-            <option value={DEFAULT_LANG}>
-              {t("SelectCountry.languagesNames.en")}
-            </option>
-            {SUPPORTED_LANGS.map((lang, index) => (
-              <option key={index} value={lang}>
-                {t(`SelectCountry.languagesNames.${lang}`)}
-              </option>
-            ))}
+            {renderLanguageOptions()}
           </TextField>
         </article>
       </section>

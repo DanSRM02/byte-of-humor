@@ -70,6 +70,9 @@
     "content": {
       "title": "Page d'Erreur",
       "message": "Une erreur est survenue !"
+    },
+    "actions": {
+      "button": "Retourner à la page précédente"
     }
   },
   "ComedianSignUpForm": {
@@ -136,6 +139,9 @@
     }
   },
   "plans": {
+    "navLink": {
+      "text": "Aller à la finale"
+    },
     "LeadIn": {
       "heading": "Envie d'une expérience Premium !",
       "paragraph": "Est-ce une blague ! Il n'y a qu'une seule façon de le découvrir !"
@@ -229,6 +235,10 @@
     }
   },
   "JokePage": {
+    "navLink": {
+      "text": "Aller à la finale"
+    },
+    "safeModeWarning": "Le mode sécurisé n'est pas autorisé pour la catégorie 'Dark'.",
     "searchFilters": {
       "heading": "Filtres de recherche",
       "paragraph": "Personnalisez votre expérience de recherche de blagues"

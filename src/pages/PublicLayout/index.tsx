@@ -6,7 +6,6 @@ import type { OutletCtxImpl } from "@/types/OutletImpl";
 
 function PublicLayout() {
   const languageContext = useOutletContext<OutletCtxImpl>();
-
   return (
     <div
       className={classes["layout"]}

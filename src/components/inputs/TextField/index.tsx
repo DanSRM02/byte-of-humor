@@ -10,12 +10,12 @@ type TextFieldProps = {
   refSelect?: Ref<HTMLSelectElement>;
   children?: ReactNode;
   type?: string;
-  onChange?: () => void;
+  onChange?: (e: any) => void;
   onSelect?: () => void;
   label?: string;
   disabled?: boolean;
   error?: boolean;
-  value?: string;
+  value?: string | string[];
   multiline?: boolean;
   rows?: number;
   cols?: number;
