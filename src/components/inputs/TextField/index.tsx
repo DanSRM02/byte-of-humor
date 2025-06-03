@@ -4,7 +4,7 @@ import classes from "./TextField.module.scss";
 
 type TextFieldProps = {
   color: ColorTypes | string;
-  placeholder?: string;  
+  placeholder?: string;
   id: string;
   refInput?: Ref<HTMLInputElement>;
   refSelect?: Ref<HTMLSelectElement>;
@@ -20,6 +20,7 @@ type TextFieldProps = {
   rows?: number;
   cols?: number;
   defaultChecked?: boolean;
+  checked?: boolean;
   required?: boolean;
   select?: boolean;
 };
@@ -27,7 +28,7 @@ const TextField = ({
   color,
   disabled = false,
   error = false,
-  onChange,  
+  onChange,
   id,
   placeholder,
   select = false,
@@ -39,6 +40,7 @@ const TextField = ({
   type,
   label,
   defaultChecked,
+  checked,
   refInput,
   refSelect,
   children,
@@ -67,8 +69,9 @@ const TextField = ({
         <input
           type="checkbox"
           id={id}
-          defaultChecked={defaultChecked}
+          checked={checked}
           ref={refInput}
+          onChange={onChange}
           className={classes["text-field__checkbox-input"]}
           disabled={disabled}
           required={required}

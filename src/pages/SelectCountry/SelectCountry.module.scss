@@ -1,21 +1,21 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .select-country {
-  background-color: _theme.$primary-bg-color;
+  background-color: theme.$primary-bg-color;
   border-radius: 2rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
-  @include _theme.flex(null, center);
+  @include theme.flex(null, center);
   flex-wrap: wrap;
   gap: 2.5rem;
   padding: 3.5rem;
 
   &__aside {
-    @include _theme.flex(column, null, center);
+    @include theme.flex(column, null, center);
     gap: 2.5rem;
   }
 
   &__article {
-    @include _theme.flex(null, center, center);
+    @include theme.flex(null, center, center);
     flex-wrap: wrap;
     gap: 2.5rem;
   }

@@ -1,7 +1,8 @@
-@use "@styles/__theme" as theme;
+@use "@styles/theme";
 .joke {
   &__header {
-    @include theme.flex(null, space-between, center);
+    @include theme.flex(null, space-around, center);
+    flex-wrap: wrap;
     padding: 2rem;
     width: 85%;
     @include theme.styled-border;
@@ -12,20 +13,44 @@
     gap: 5rem;
 
     svg:active,
-    svg:hover {      
+    svg:hover {
       fill: theme.$secondary-bg-color;
       border-bottom: 2px solid theme.$secondary-bg-color;
     }
   }
 
   &__header-filter {
-    @include theme.flex(null, null, start);
+    @include theme.flex(null, center);
+    flex-wrap: wrap;
     gap: 1.5rem;
+  }
+
+  &__error {
+    @extend %informational-message;
+    color: theme.$alert-error-text;
+    background-color: theme.$alert-error-bg;
+    border-color: darken(theme.$alert-error-bg, 12%);
+    font-weight: 500;
+  }
+
+  &__loading {
+    @extend %informational-message;
+    color: theme.$alert-info-text;
+    background-color: theme.$alert-info-bg;
+    border-color: darken(theme.$alert-info-bg, 10%);
+  }
+
+  &__safe-mode-warning {
+    @extend %informational-message;
+    color: theme.$alert-warning-text;
+    background-color: theme.$alert-warning-bg;
+    border-color: darken(theme.$alert-warning-bg, 10%);
+    font-weight: 500;
   }
 
   &__menu {
     display: grid;
-    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     margin: 2rem;
     gap: 1rem;
   }

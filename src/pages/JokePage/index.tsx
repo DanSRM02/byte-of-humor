@@ -8,18 +8,18 @@ import type { OutletCtxImpl } from "@/types/OutletImpl";
 import Card from "@/components/feedback/Card";
 import { useTranslation } from "react-i18next";
 import { _AVAILABLE_CATEGORIES } from "@/utils/const";
-import type { FilterImpl } from "@/types/FilterImpl";
+import type { FilterImpl } from "@/types/JokesAPITypes";
 import { FaArrowLeftLong } from "react-icons/fa6";
 function JokePage() {
   const { jokeState, getInitialJokes, getFilteredJokes } = useJoke();
   const { t } = useTranslation();
-  const { language } = useOutletContext<OutletCtxImpl>();
-
+  const { language, localizationRouter } = useOutletContext<OutletCtxImpl>();
   const [filter, setFilter] = useState<FilterImpl>({
     category: "Any",
     searchTerm: "",
     safeMode: true,
-  });
+  });  
+  const isSafeModeAllowed = filter.category !== "Dark";
 
   const translations = useMemo(
     () => ({
@@ -45,34 +45,41 @@ function JokePage() {
     [t]
   );
 
-  const isSafeModeAllowed = filter.category !== "Dark";
-
-  useEffect(() => {
-    getInitialJokes(language);
-    if (isSafeModeAllowed) {
-      getFilteredJokes(filter, language);
-    }
-  }, [filter, language]);
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { id, value, type, checkValidity } = e.target;
-    setFilter((prev) => ({
-      ...prev,
-      [id === "search-term"
-        ? "searchTerm"
-        : id === "select-category"
-        ? "category"
-        : "safeMode"]: type === "checkbox" ? checkValidity : value,
-    }));
+    const { value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFilter((prevFilter) => {
+      let newFilter = { ...prevFilter };
+      switch (type) {
+        case "search":
+          newFilter.searchTerm = value;
+          break;
+        case "checkbox":          
+          if (isSafeModeAllowed) {
+            newFilter.safeMode = checked;
+          }
+          break;
+        case "select-one":
+          newFilter.category = value;          
+          if (value === "Dark") {
+            newFilter.safeMode = false;
+          }
+          break;
+      }
+      return newFilter;
+    });
   };
 
   useEffect(() => {
-    if (filter.category === "Dark" && filter.safeMode) {
-      setFilter((prev) => ({ ...prev, safeMode: false }));
-    }
-  }, [filter.category]);
+    getInitialJokes(language);
+  }, [language, localizationRouter]);
+
+  useEffect(() => {
+    getFilteredJokes(filter, language);
+  }, [filter.category, filter.searchTerm, filter.safeMode, language]);
 
   return (
     <>
@@ -100,12 +107,12 @@ function JokePage() {
               <TextField
                 type="checkbox"
                 color="primary"
-                defaultChecked={filter.safeMode}
+                checked={isSafeModeAllowed ? filter.safeMode : false}
+                disabled={!isSafeModeAllowed}
                 label={translations.searchForm.safeModeLabel}
                 onChange={handleInputChange}
                 id="safeMode"
                 aria-label={translations.searchForm.safeModeLabel}
-                disabled={filter.category === "Dark"}
               />
               <TextField
                 select
@@ -136,12 +143,18 @@ function JokePage() {
             </span>
           </div>
         </span>
+        {jokeState.error && (
+          <p className={classes["joke__error"]} role="alert">
+            {jokeState.error}
+          </p>
+        )}
         {jokeState.isLoading && (
-          <p className={classes[""]} aria-live="polite">
+          <p className={classes["joke_loading"]} aria-live="polite">
             {translations.loadingMessage}
           </p>
         )}
-        {!isSafeModeAllowed && (
+        {/* Show warning only if category is 'Dark' */}
+        {filter.category === "Dark" && (
           <span className={classes["joke__safe-mode-warning"]}>
             {translations.safeModeWarning}
           </span>

@@ -1,15 +1,15 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .log-in {
-  @include _theme.flex(null, center, center);
-  @include _theme.styled-border;
+  @include theme.flex(null, center, center);
+  @include theme.styled-border;
   flex-wrap: wrap;
   padding: 3rem;
   min-height: 35rem;
   gap: 2rem;
 
   &__form {
-    @include _theme.flex(column);
+    @include theme.flex(column);
     gap: 1.5rem;
     width: 100%;
     max-width: 550px;

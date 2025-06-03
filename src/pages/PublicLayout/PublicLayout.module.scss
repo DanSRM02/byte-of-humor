@@ -1,4 +1,4 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .layout {
   min-height: 100vh;
@@ -16,6 +16,6 @@
 
 @media (max-width: 50em) {
   .card-content {
-    @include _theme.flex(column, center, center);
+    @include theme.flex(column, center, center);
   }
 }

@@ -1,11 +1,11 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .lead-in {
-  @include _theme.flex(column, null, null);
+  @include theme.flex(column, null, null);
   flex-wrap: wrap;
 
   &__icon {
-    background-color: _theme.$secondary-bg-color;
+    background-color: theme.$secondary-bg-color;
     padding: 1.5rem;
     border-radius: 50%;
   }

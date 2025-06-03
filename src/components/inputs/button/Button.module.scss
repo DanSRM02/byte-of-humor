@@ -1,4 +1,4 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .button {
   font-family: "Inter", sans-serif;
@@ -11,8 +11,8 @@
 
   &-primary {
     @extend .button;
-    background-color: _theme.$secondary-bg-color;
-    color: _theme.$primary-bg-color;
+    background-color: theme.$secondary-bg-color;
+    color: theme.$primary-bg-color;
 
     &:hover,
     &:active {
@@ -21,23 +21,23 @@
   }
   &-secondary {
     @extend .button;
-    background-color: _theme.$primary-bg-color;
-    color: _theme.$secondary-bg-color;
+    background-color: theme.$primary-bg-color;
+    color: theme.$secondary-bg-color;
 
     &:hover,
     &:active {
-      background-color: _theme.$secondary-bg-color;
-      color: _theme.$primary-bg-color;
+      background-color: theme.$secondary-bg-color;
+      color: theme.$primary-bg-color;
     }
   }
   &-outline {
     @extend .button;
-    background-color: _theme.$primary-bg-color;
+    background-color: theme.$primary-bg-color;
     border: 1px solid rgba(0, 0, 0, 0.327);
 
     &:hover,
     &:active {
-      background-color: _theme.$third-bg-color;      
+      background-color: theme.$third-bg-color;      
     }
   }
 }

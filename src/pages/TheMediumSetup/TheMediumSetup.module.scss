@@ -1,4 +1,4 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .card-content {
   display: grid;
@@ -9,10 +9,10 @@
 }
 
 .advise {
-  @include _theme.flex(null, center, center);
+  @include theme.flex(null, center, center);
   flex-wrap: wrap;
   gap: 5rem;
-  background-color: _theme.$third-bg-color;
+  background-color: theme.$third-bg-color;
   padding: 2.5rem;
   border-radius: 1rem;
 
@@ -25,10 +25,10 @@
 
 .lead-in {
   &__main {
-    background-color: _theme.$third-bg-color;
+    background-color: theme.$third-bg-color;
     padding: 1rem;
     gap: 2.5rem;
-    @include _theme.flex(null, center, center);
+    @include theme.flex(null, center, center);
     flex-wrap: wrap;
     min-height: 24rem;
     border-radius: 1rem;
@@ -37,7 +37,7 @@
     }
   }
   &__sub-main {
-    @include _theme.flex(column);
+    @include theme.flex(column);
     margin: 0 5rem;
     gap: 1rem;
     > :nth-child(2) {

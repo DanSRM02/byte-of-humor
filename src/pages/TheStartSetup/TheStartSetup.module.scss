@@ -1,4 +1,4 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .first-setup {
   display: flex;
@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     padding: 7rem;
-    background-color: _theme.$third-bg-color;
+    background-color: theme.$third-bg-color;
   }
 }
 

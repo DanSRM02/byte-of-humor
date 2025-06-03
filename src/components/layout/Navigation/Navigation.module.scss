@@ -1,4 +1,4 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .header {
   display: flex;
@@ -21,8 +21,8 @@
     &:active {
       padding: 10px;
       border-radius: 5px;
-      background: _theme.$secondary-bg-color;
-      color: _theme.$primary-bg-color;
+      background: theme.$secondary-bg-color;
+      color: theme.$primary-bg-color;
     }
   }
 }

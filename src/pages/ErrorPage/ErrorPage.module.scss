@@ -1,14 +1,14 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .error {
-  @include _theme.flex(column, center, center);
+  @include theme.flex(column, center, center);
   min-height: 100vh;
   padding: 2rem;
-  background-color: _theme.$third-bg-color;
+  background-color: theme.$third-bg-color;
 
   &__container {
-    @include _theme.flex(column, center, center);
-    @include _theme.styled-border;
+    @include theme.flex(column, center, center);
+    @include theme.styled-border;
     max-width: 50rem;
     width: 100%;
     padding: 3rem 2rem;
@@ -23,7 +23,7 @@
   &__title {
     font-size: 2rem;
     font-weight: 700;
-    color: _theme.$secondary-bg-color;
+    color: theme.$secondary-bg-color;
     margin: 0 0 1rem 0;
     line-height: 1.2;
   }
@@ -37,7 +37,7 @@
   }
 
   &__actions {
-    @include _theme.flex(row, center, center);
+    @include theme.flex(row, center, center);
     gap: 1rem;
     flex-wrap: wrap;
   }

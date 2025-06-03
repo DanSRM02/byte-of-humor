@@ -1,12 +1,11 @@
-import type { FilterImpl } from "@/types/FilterImpl";
+import type { FilterImpl } from "@/types/JokesAPITypes";
 import apiClient from "./apiClient";
 
-export const getJokesInititalLoad = async (language: string = "en") => {
+export const getJokesInitialLoad = async (language: string = "en") => {
   try {
     const response = await apiClient.get(
       `/joke/Any?safe-mode&lang=${language}&amount=10`
     );
-
     return response;
   } catch (error) {
     throw error;
@@ -22,7 +21,6 @@ export const getJokesWithFilter = async (
 
   try {
     const url = `/joke/${category}?${queryString}`;
-
     const response = await apiClient.get(url);
 
     return response;
@@ -30,7 +28,6 @@ export const getJokesWithFilter = async (
     if (error instanceof Error) {
       throw error;
     }
-    throw new Error(`Error fetching jokes: ${String(error)}`);
   }
 };
 

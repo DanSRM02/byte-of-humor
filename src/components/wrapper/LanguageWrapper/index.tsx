@@ -20,10 +20,7 @@ const   LanguageWrapper = () => {
 
     const validatedLocaleObject = COUNTRIES.find(
       (country) => country.code === locale
-    );
-
-    console.log(validatedLanguage);
-    
+    );        
 
     const validatedLocaleCode = validatedLocaleObject?.code ?? DEFAULT_LOCAL;
 

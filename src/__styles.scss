@@ -1,14 +1,15 @@
-@use "./styles/__theme";
+@use "./styles/theme";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background-color: _theme.$primary-bg-color;
+  background-color: theme.$primary-bg-color;
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  color: _theme.$secondary-bg-color;
+  color: theme.$secondary-bg-color;
 }
 ul,
 ol {

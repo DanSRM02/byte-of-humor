@@ -1,19 +1,19 @@
-@use "@styles/__theme";
+@use "@styles/theme";
 
 .footer {
-  @include _theme.flex(null, space-between);
-  background-color: _theme.$primary-bg-color;
+  @include theme.flex(null, space-between);
+  background-color: theme.$primary-bg-color;
   padding: 3rem 5rem;
   gap: 2.5rem;
 
   &__brand-info {
-    @include _theme.flex(column, space-around);
+    @include theme.flex(column, space-around);
   }
 
   &__list-info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 1rem;
   }
 }
